@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "query": "I want to start a new R-Ladies chapter in my city — how do I get going?",
+    "expected": "rladies-chapter-setup"
+  },
+  {
+    "id": 2,
+    "query": "our R-Ladies chapter has been inactive for 8 months — what happens now and what are our options?",
+    "expected": "rladies-chapter-setup"
+  },
+  {
+    "id": 3,
+    "query": "how do we officially add a co-organizer to our R-Ladies chapter?",
+    "expected": "rladies-chapter-setup"
+  },
+  {
+    "id": 4,
+    "query": "I paid for our R-Ladies guest speaker's hotel — how do I get reimbursed?",
+    "expected": "rladies-funding"
+  },
+  {
+    "id": 5,
+    "query": "how do we apply for an R Consortium grant for our R-Ladies chapter?",
+    "expected": "rladies-funding"
+  },
+  {
+    "id": 6,
+    "query": "how do we find and pitch a local sponsor for our R-Ladies meetup?",
+    "expected": "rladies-funding"
+  },
+  {
+    "id": 7,
+    "query": "a member is being harassed by another member on the R-Ladies community Slack — what do I do?",
+    "expected": "rladies-community-moderation"
+  },
+  {
+    "id": 8,
+    "query": "someone posted a paid-course ad in the R-Ladies Slack — should I remove it?",
+    "expected": "rladies-community-moderation"
+  },
+  {
+    "id": 9,
+    "query": "how should I keep the R-Ladies community Slack channels tidy and welcoming?",
+    "expected": "rladies-community-moderation"
+  },
+  {
+    "id": 10,
+    "query": "how do I run our next R-Ladies meetup and find a speaker?",
+    "expected": "rladies-chapter-event"
+  },
+  {
+    "id": 11,
+    "query": "how do I add our newly approved R-Ladies chapter to the website?",
+    "expected": "rladies-website"
+  },
+  {
+    "id": 12,
+    "query": "a company wants to sponsor us and present their paid analytics tool at our meetup — should we accept?",
+    "expected": "rladies-partnership-eval"
+  },
+  {
+    "id": 13,
+    "query": "what do we need to do to keep our R-Ladies chapter active and compliant?",
+    "expected": "rladies-chapter-setup"
+  },
+  {
+    "id": 14,
+    "query": "I want to start a Python user group in my city — how?",
+    "expected": "none"
+  },
+  {
+    "id": 15,
+    "query": "how do I get reimbursed for my business trip at my company?",
+    "expected": "none"
+  },
+  {
+    "id": 16,
+    "query": "how should I moderate my company's internal Slack workspace?",
+    "expected": "none"
+  },
+  {
+    "id": 17,
+    "query": "how do we apply for a research grant for my university lab?",
+    "expected": "none"
+  }
+]

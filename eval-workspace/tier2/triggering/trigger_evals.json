@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "query": "how do I make a hex sticker for my R-Ladies chapter in Affinity?",
+    "expected": "rladies-branded-assets"
+  },
+  {
+    "id": 2,
+    "query": "I want to drop a photo into the R of the R-Ladies logo for a chapter banner — how?",
+    "expected": "rladies-branded-assets"
+  },
+  {
+    "id": 3,
+    "query": "we're hosting an online R-Ladies talk on the shared Zoom next week, how do I book it and host?",
+    "expected": "rladies-chapter-event"
+  },
+  {
+    "id": 4,
+    "query": "how far ahead should I line up a speaker for our R-Ladies meetup, and what do I collect from them?",
+    "expected": "rladies-chapter-event"
+  },
+  {
+    "id": 5,
+    "query": "I'm a WeAreRLadies admin onboarding next week's curator — what are the steps?",
+    "expected": "rladies-rocur"
+  },
+  {
+    "id": 6,
+    "query": "how do I rotate the Bluesky app password for the rotating curation account?",
+    "expected": "rladies-rocur"
+  },
+  {
+    "id": 7,
+    "query": "how do I add a new R-Ladies chapter to the website?",
+    "expected": "rladies-website"
+  },
+  {
+    "id": 8,
+    "query": "I'm reviewing a website PR and the check-build is red — how do I review it?",
+    "expected": "rladies-website"
+  },
+  {
+    "id": 9,
+    "query": "a company wants to sponsor our R-Ladies meetup and give a talk about their paid product — can we?",
+    "expected": "rladies-partnership-eval"
+  },
+  {
+    "id": 10,
+    "query": "a conference wants an R-Ladies branded panel — how do we vet and approve it?",
+    "expected": "rladies-partnership-eval"
+  },
+  {
+    "id": 11,
+    "query": "what are the official R-Ladies brand colours and fonts now?",
+    "expected": "rladies-brand"
+  },
+  {
+    "id": 12,
+    "query": "draft an R-Ladies Bluesky post announcing our ggplot2 workshop",
+    "expected": "rladies-social-posts"
+  },
+  {
+    "id": 13,
+    "query": "help me write and schedule an R-Ladies blog post to publish next Tuesday",
+    "expected": "rladies-blog-post"
+  },
+  {
+    "id": 14,
+    "query": "what's our day-of checklist for actually running an R-Ladies meetup?",
+    "expected": "rladies-chapter-event"
+  },
+  {
+    "id": 15,
+    "query": "translate our R-Ladies FAQ page into Spanish on the site",
+    "expected": "rladies-translate-page"
+  },
+  {
+    "id": 16,
+    "query": "make a hex sticker for my Python user group",
+    "expected": "none"
+  },
+  {
+    "id": 17,
+    "query": "review a pull request on my company's Next.js marketing website",
+    "expected": "none"
+  },
+  {
+    "id": 18,
+    "query": "how do I host a webinar on Zoom for my book club?",
+    "expected": "none"
+  },
+  {
+    "id": 19,
+    "query": "a vendor wants to sponsor my startup's conference — is that a good idea?",
+    "expected": "none"
+  }
+]

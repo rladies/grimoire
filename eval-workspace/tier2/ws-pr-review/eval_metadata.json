@@ -1,0 +1,15 @@
+{
+  "eval_id": 7,
+  "eval_name": "ws-pr-review",
+  "skill": "rladies-website",
+  "prompt": "I'm reviewing a pull request on the R-Ladies website repo. The check-build is red and there's a Netlify preview link. How should I review it?",
+  "assertions": [
+    "Says check-build is the gate — fix it first; read the log (bad frontmatter YAML, broken shortcode, or unresolvable image)",
+    "Says to read the CI check comments in order",
+    "Says to open the Netlify preview and check light AND dark mode",
+    "Mentions checking things CI can't (directory photos, byline/directory_id resolution, heading hierarchy, shortcode rendering)",
+    "Says the default merge is rebase",
+    "Says to watch the production build after merging",
+    "Notes using 'request changes' sparingly / kindly for first-timers"
+  ]
+}

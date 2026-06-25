@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "query": "our R-Ladies chapter's event description reads really corporate and cold, can you rewrite it to sound like us?",
+    "expected": "rladies-brand"
+  },
+  {
+    "id": 2,
+    "query": "what are the official R-Ladies brand colours and font now? I'm designing a flyer for our meetup",
+    "expected": "rladies-brand"
+  },
+  {
+    "id": 3,
+    "query": "is it ok to recolour and rotate the R in the R-Ladies logo for our chapter banner?",
+    "expected": "rladies-brand"
+  },
+  {
+    "id": 4,
+    "query": "I want to publish a recap of our R-Ladies useR! talk on rladies.org, co-authored with an editor — how do I structure the post and its frontmatter?",
+    "expected": "rladies-blog-post"
+  },
+  {
+    "id": 5,
+    "query": "how do I schedule my finished R-Ladies blog post to auto-publish next Tuesday on the site?",
+    "expected": "rladies-blog-post"
+  },
+  {
+    "id": 6,
+    "query": "how do I add a warning callout box and a captioned figure to my R-Ladies blog post that I'm writing in Quarto?",
+    "expected": "rladies-blog-post"
+  },
+  {
+    "id": 7,
+    "query": "draft Bluesky and LinkedIn posts for R-Ladies São Paulo's online ggplot2 workshop, and tell me the right image sizes",
+    "expected": "rladies-social-posts"
+  },
+  {
+    "id": 8,
+    "query": "the global @rladies account got tagged in a job posting and an in-person chapter meetup — should we repost either?",
+    "expected": "rladies-social-posts"
+  },
+  {
+    "id": 9,
+    "query": "we want to run an R-Ladies International Women's Day campaign on social media this year, how should we set it up?",
+    "expected": "rladies-social-posts"
+  },
+  {
+    "id": 10,
+    "query": "there's a Spanish R-Ladies page showing the orange auto-translated banner, I want to fix it properly and open a PR",
+    "expected": "rladies-translate-page"
+  },
+  {
+    "id": 11,
+    "query": "we'd like to add Italian to the R-Ladies website — what's the full setup for a new language?",
+    "expected": "rladies-translate-page"
+  },
+  {
+    "id": 12,
+    "query": "translating an R-Ladies tutorial page into Portuguese — what do I do with the code comments and function names?",
+    "expected": "rladies-translate-page"
+  },
+  {
+    "id": 13,
+    "query": "a new abstract-review request just came into R-Ladies, walk me through assigning reviewers and updating the tables",
+    "expected": "rladies-abstract-review"
+  },
+  {
+    "id": 14,
+    "query": "write the email asking an R-Ladies volunteer to review a conference abstract, deadline March 15",
+    "expected": "rladies-abstract-review"
+  },
+  {
+    "id": 15,
+    "query": "translate our latest R-Ladies blog post into Spanish for the website",
+    "expected": "rladies-translate-page"
+  },
+  {
+    "id": 16,
+    "query": "announce our newly published R-Ladies blog post across our social channels",
+    "expected": "rladies-social-posts"
+  },
+  {
+    "id": 17,
+    "query": "draft an on-brand R-Ladies Instagram caption for our upcoming workshop",
+    "expected": "rladies-social-posts"
+  },
+  {
+    "id": 18,
+    "query": "write an on-brand intro paragraph for our R-Ladies blog post",
+    "expected": "rladies-blog-post"
+  },
+  {
+    "id": 19,
+    "query": "write a blog post for my personal Hugo site about a hiking trip",
+    "expected": "none"
+  },
+  {
+    "id": 20,
+    "query": "what brand colours and fonts should my fintech startup use?",
+    "expected": "none"
+  },
+  {
+    "id": 21,
+    "query": "translate this Python script's comments into French for my GitHub repo",
+    "expected": "none"
+  },
+  {
+    "id": 22,
+    "query": "schedule my bakery's Instagram posts with Buffer this week",
+    "expected": "none"
+  },
+  {
+    "id": 23,
+    "query": "help me sharpen the abstract I'm submitting to NeurIPS next month",
+    "expected": "none"
+  },
+  {
+    "id": 24,
+    "query": "add a Spanish version of my company's marketing landing page",
+    "expected": "none"
+  }
+]

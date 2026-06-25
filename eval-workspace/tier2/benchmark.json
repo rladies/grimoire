@@ -1,0 +1,1161 @@
+{
+  "metadata": {
+    "skill_name": "ropensci-skills",
+    "skill_path": "/Users/athanasm/workspace/rladies/rladies-skills",
+    "executor_model": "claude-sonnet-4-6",
+    "timestamp": "2026-06-24T19:43:45.008596+00:00",
+    "evals_run": [
+      0,
+      1,
+      2,
+      3,
+      9,
+      8,
+      5,
+      4,
+      6,
+      7
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "ba-hex-sticker",
+      "skill": "rladies-branded-assets",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 35.3,
+        "tokens": 20737,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to start from the official Affinity hex template",
+          "passed": true,
+          "evidence": "Download the Affinity hex template from the branding-materials repo"
+        },
+        {
+          "text": "Says to edit the Content layer with the chapter name / elements",
+          "passed": true,
+          "evidence": "Work only in the Content layer \u2014 do not touch the outline layer."
+        },
+        {
+          "text": "Says to recolour using the brand hex codes / brand colours",
+          "passed": true,
+          "evidence": "Recolour using brand hex codes. The primary brand colour is Blue Violet #881ef9."
+        },
+        {
+          "text": "Mentions batch-selecting strokes via Layer > Select > Same > Stroke Colour",
+          "passed": true,
+          "evidence": "Layer > Select > Same > Stroke Colour, then apply the brand colour to all selected strokes at once."
+        },
+        {
+          "text": "Says to export as PNG",
+          "passed": true,
+          "evidence": "Export as PNG. File > Export > PNG."
+        },
+        {
+          "text": "States a logo-integrity rule (don't move/rotate/distort the R relative to the text)",
+          "passed": true,
+          "evidence": "Do not move, transform, rotate, skew, or stretch the R relative to the RLadies+ text part of the logo."
+        },
+        {
+          "text": "Mentions the Canva R+ template as an alternative",
+          "passed": true,
+          "evidence": "Canva R+ template \u2014 insert chapter photos into the R and + shapes."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "ba-hex-sticker",
+      "skill": "rladies-branded-assets",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.1429,
+        "passed": 1,
+        "failed": 6,
+        "total": 7,
+        "time_seconds": 32.7,
+        "tokens": 16752,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to start from the official Affinity hex template",
+          "passed": false,
+          "evidence": "absent \u2014 instructs creating from scratch (File > New, draw a hexagon) with no mention of an official template"
+        },
+        {
+          "text": "Says to edit the Content layer with the chapter name / elements",
+          "passed": false,
+          "evidence": "absent \u2014 no mention of a Content layer; describes generic layer setup from scratch"
+        },
+        {
+          "text": "Says to recolour using the brand hex codes / brand colours",
+          "passed": false,
+          "evidence": "References #88398A (the old pre-2026 brand colour) as 'Primary color', not the current official brand hex codes"
+        },
+        {
+          "text": "Mentions batch-selecting strokes via Layer > Select > Same > Stroke Colour",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Says to export as PNG",
+          "passed": true,
+          "evidence": "File > Export > PNG at 2\u00d7 or 3\u00d7 resolution"
+        },
+        {
+          "text": "States a logo-integrity rule (don't move/rotate/distort the R relative to the text)",
+          "passed": false,
+          "evidence": "absent \u2014 no logo-integrity rule mentioned"
+        },
+        {
+          "text": "Mentions the Canva R+ template as an alternative",
+          "passed": false,
+          "evidence": "absent \u2014 Canva is not mentioned at all"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "ba-logo-fill",
+      "skill": "rladies-branded-assets",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 32.4,
+        "tokens": 18536,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says the R and + of the submark can be filled with images or brand colours",
+          "passed": true,
+          "evidence": "Canva R+ template \u2014 insert chapter photos into the R and + shapes. (referenced in ba-hex-sticker response); in this response: 'Use the R+ logo template specifically designed for image/colour fills.'"
+        },
+        {
+          "text": "Notes free Canva can't export transparent backgrounds; Affinity can (use Affinity for transparency)",
+          "passed": true,
+          "evidence": "free Canva will export with a white background. If transparency is required, use Affinity instead. / Canva's free tier cannot export transparent backgrounds."
+        },
+        {
+          "text": "Gives steps to insert the image into the R/+ shape (e.g. clipping mask in Affinity)",
+          "passed": true,
+          "evidence": "Use a clipping mask to place your photo inside the R shape: Place your photo ... Layer \u2192 Insert Inside (or drag the photo thumbnail onto the R shape in the Layers panel)"
+        },
+        {
+          "text": "Says to keep every part contrasting with its background",
+          "passed": true,
+          "evidence": "Keep sufficient contrast between the photo content and anything surrounding the R (logo-integrity rule: every part must contrast with its background)."
+        },
+        {
+          "text": "States the logo-integrity rule: do not move/rotate/recreate the R relative to the RLadies+ text",
+          "passed": true,
+          "evidence": "Do not move, rotate, skew, or stretch the R relative to the 'RLadies+' text portion of the logo."
+        },
+        {
+          "text": "Mentions export (PNG/JPG)",
+          "passed": true,
+          "evidence": "Export: File \u2192 Export \u2192 PNG / Share \u2192 Download \u2192 PNG (or JPG)"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "ba-logo-fill",
+      "skill": "rladies-branded-assets",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.3333,
+        "passed": 2,
+        "failed": 4,
+        "total": 6,
+        "time_seconds": 32.5,
+        "tokens": 16736,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says the R and + of the submark can be filled with images or brand colours",
+          "passed": false,
+          "evidence": "absent \u2014 discusses filling only the R shape; the + is never mentioned as a fillable element"
+        },
+        {
+          "text": "Notes free Canva can't export transparent backgrounds; Affinity can (use Affinity for transparency)",
+          "passed": false,
+          "evidence": "absent \u2014 recommends Affinity for precision/scalability but never mentions Canva's limitation with transparent background export"
+        },
+        {
+          "text": "Gives steps to insert the image into the R/+ shape (e.g. clipping mask in Affinity)",
+          "passed": true,
+          "evidence": "Layer > Insert Inside (or drag the photo thumbnail onto the R path layer in the Layers panel until you see the indent indicator). The photo is now clipped inside the R shape."
+        },
+        {
+          "text": "Says to keep every part contrasting with its background",
+          "passed": false,
+          "evidence": "absent \u2014 contrast is not mentioned"
+        },
+        {
+          "text": "States the logo-integrity rule: do not move/rotate/recreate the R relative to the RLadies+ text",
+          "passed": false,
+          "evidence": "absent \u2014 no logo integrity rule stated; no instruction to preserve the R's position relative to the wordmark"
+        },
+        {
+          "text": "Mentions export (PNG/JPG)",
+          "passed": true,
+          "evidence": "Export as PNG (with transparency) for web/social, or as PDF for print."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "ce-online-zoom",
+      "skill": "rladies-chapter-event",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 29.1,
+        "tokens": 19212,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to book via the Calendly link in the #online_meetups Slack channel (and not to share it publicly)",
+          "passed": true,
+          "evidence": "Go to the #online_meetups channel in the R-Ladies Organizer Slack. The Calendly booking link is posted there \u2014 do not share it publicly."
+        },
+        {
+          "text": "Says to put that exact Calendly/email Zoom link on Meetup and NOT connect a personal Zoom account",
+          "passed": true,
+          "evidence": "paste the exact Zoom link from the Calendly email into your event. Do not connect your personal Zoom account to Meetup"
+        },
+        {
+          "text": "Mentions both the passcode and the host key",
+          "passed": true,
+          "evidence": "Note the two codes from #online_meetups: Passcode \u2014 lets attendees join... Host key \u2014 lets you claim host on the day"
+        },
+        {
+          "text": "Recommends a ~15-minute buffer before the announced start time",
+          "passed": true,
+          "evidence": "Book 15 minutes early (e.g. book 5:45 pm if your event starts at 6:00 pm)"
+        },
+        {
+          "text": "Explains claiming host: Participants list > Claim Host, then enter the host key",
+          "passed": true,
+          "evidence": "Open the Participants panel \u2192 click Claim Host at the bottom \u2192 enter the host key."
+        },
+        {
+          "text": "Says to make co-organizers co-hosts",
+          "passed": true,
+          "evidence": "Admit co-organizers first and make them co-hosts"
+        },
+        {
+          "text": "Says to remind attendees of the Code of Conduct at the start",
+          "passed": true,
+          "evidence": "mandatory \u2014 a Code of Conduct reminder (state that it covers all media and refer to the written CoC)"
+        },
+        {
+          "text": "Says to END the meeting (not just leave) so the next organizer can use the room",
+          "passed": true,
+          "evidence": "end the meeting for all \u2014 do not simply leave. This frees the room for the next organizer."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "ce-online-zoom",
+      "skill": "rladies-chapter-event",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.375,
+        "passed": 3,
+        "failed": 5,
+        "total": 8,
+        "time_seconds": 24.2,
+        "tokens": 16157,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to book via the Calendly link in the #online_meetups Slack channel (and not to share it publicly)",
+          "passed": false,
+          "evidence": "absent \u2014 describes a generic 'booking form or process' with no mention of Calendly or the #online_meetups channel"
+        },
+        {
+          "text": "Says to put that exact Calendly/email Zoom link on Meetup and NOT connect a personal Zoom account",
+          "passed": false,
+          "evidence": "absent \u2014 says to 'Share the meeting link with your speakers and attendees via your usual channels' with no mention of using the Calendly email link or avoiding a personal Zoom account"
+        },
+        {
+          "text": "Mentions both the passcode and the host key",
+          "passed": false,
+          "evidence": "mentions the host key but no mention of a passcode"
+        },
+        {
+          "text": "Recommends a ~15-minute buffer before the announced start time",
+          "passed": false,
+          "evidence": "says 'Join the meeting 10\u201315 minutes early' as a general tip but does not say to book the Zoom slot 15 minutes before the announced start time"
+        },
+        {
+          "text": "Explains claiming host: Participants list > Claim Host, then enter the host key",
+          "passed": true,
+          "evidence": "Click Participants in the toolbar \u2192 Click Claim Host at the bottom of the Participants panel \u2192 Enter the host key when prompted"
+        },
+        {
+          "text": "Says to make co-organizers co-hosts",
+          "passed": true,
+          "evidence": "Assign co-hosts to help manage the session (implies co-organizers, though not stated explicitly; accepted as present)"
+        },
+        {
+          "text": "Says to remind attendees of the Code of Conduct at the start",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Says to END the meeting (not just leave) so the next organizer can use the room",
+          "passed": true,
+          "evidence": "End the meeting for all when done"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "ce-speakers",
+      "skill": "rladies-chapter-event",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 30.6,
+        "tokens": 18767,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to look for speakers at least two months ahead",
+          "passed": true,
+          "evidence": "Start recruiting at least two months before the talk."
+        },
+        {
+          "text": "Emphasizes speaker diversity (avoid a year of all-white speakers / all-white panels)",
+          "passed": true,
+          "evidence": "avoid a one year period with all white speakers at the chapter events... avoid all white panels"
+        },
+        {
+          "text": "Names places to find diverse speakers (R-Ladies Directory, Community Slack, minority-focused communities)",
+          "passed": true,
+          "evidence": "R-Ladies Directory, R-Ladies Community Slack, Minorities in R, Black Girls Code, Black in Data, Coding Black Females, Black in AI, 500 Women Scientists, speakerinnen.org, Women in Bioinformatics & Data Science LatAm, Las de Sistemas LatAm"
+        },
+        {
+          "text": "Says to collect a bio and their pronouns",
+          "passed": true,
+          "evidence": "Bio \u2014 for the event listing and introduction. Pronouns \u2014 required; you will introduce them using their pronouns on the day."
+        },
+        {
+          "text": "Says to collect an informative abstract (and their capacity)",
+          "passed": true,
+          "evidence": "Informative abstract \u2014 covering both the content and the format of the talk... Capacity \u2014 how many people they are comfortable presenting to."
+        },
+        {
+          "text": "Says to test screen-sharing ahead of time for online events",
+          "passed": true,
+          "evidence": "Screen-share test (for online events) \u2014 schedule a test run with them ahead of time to confirm their setup works with the R-Ladies Zoom."
+        },
+        {
+          "text": "Mentions funding accessible travel/accommodation where applicable",
+          "passed": true,
+          "evidence": "Fund and arrange accessible travel and accommodation where applicable."
+        },
+        {
+          "text": "Says to thank the speaker and encourage submitting materials to R Weekly",
+          "passed": true,
+          "evidence": "Thank the speaker... Encourage them \u2014 or offer \u2014 to submit their materials to R Weekly."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "ce-speakers",
+      "skill": "rladies-chapter-event",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.25,
+        "passed": 2,
+        "failed": 6,
+        "total": 8,
+        "time_seconds": 27.3,
+        "tokens": 16244,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to look for speakers at least two months ahead",
+          "passed": false,
+          "evidence": "absent \u2014 no timeline or lead-time recommendation mentioned"
+        },
+        {
+          "text": "Emphasizes speaker diversity (avoid a year of all-white speakers / all-white panels)",
+          "passed": false,
+          "evidence": "absent \u2014 no mention of avoiding all-white speakers or panels"
+        },
+        {
+          "text": "Names places to find diverse speakers (R-Ladies Directory, Community Slack, minority-focused communities)",
+          "passed": false,
+          "evidence": "mentions Community Slack generally, but not the R-Ladies Directory and no minority-focused communities listed"
+        },
+        {
+          "text": "Says to collect a bio and their pronouns",
+          "passed": true,
+          "evidence": "Full name and preferred pronouns... Short bio (2\u20134 sentences) for the event announcement"
+        },
+        {
+          "text": "Says to collect an informative abstract (and their capacity)",
+          "passed": false,
+          "evidence": "mentions 'short abstract (1\u20133 sentences) for promotion' but no mention of capacity (how many attendees they are comfortable with)"
+        },
+        {
+          "text": "Says to test screen-sharing ahead of time for online events",
+          "passed": true,
+          "evidence": "Do a tech check before a virtual event (audio, screen sharing, slide resolution)."
+        },
+        {
+          "text": "Mentions funding accessible travel/accommodation where applicable",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Says to thank the speaker and encourage submitting materials to R Weekly",
+          "passed": false,
+          "evidence": "says 'send a thank-you note' but no mention of R Weekly"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 9,
+      "eval_name": "pe-conference",
+      "skill": "rladies-partnership-eval",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 33.8,
+        "tokens": 18996,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says an R-Ladies branded event needs R-Ladies global-team approval",
+          "passed": true,
+          "evidence": "\"An R-Ladies branded panel (any event using 'R-Ladies' in the title) requires approval from the global team before proceeding\""
+        },
+        {
+          "text": "Says to email info@rladies.org (with the approval template)",
+          "passed": true,
+          "evidence": "\"emails `info@rladies.org` using this template:\" followed by full email template"
+        },
+        {
+          "text": "Says to check the conference has a Code of Conduct",
+          "passed": true,
+          "evidence": "\"Code of Conduct: Confirm the conference has a Code of Conduct, or will adopt one\""
+        },
+        {
+          "text": "Says to check the conference's own speaker/role diversity (systematically-excluded groups)",
+          "passed": true,
+          "evidence": "\"Confirm that people from systematically excluded groups are represented not just as attendees, but in substantive roles: keynote speakers, organisers, panelists, chairs\""
+        },
+        {
+          "text": "Says invited R-Ladies speakers should have fees waived/reimbursed and travel/lodging/meals covered",
+          "passed": true,
+          "evidence": "\"Waive or reimburse all event fees for the R-Ladies speaker. If travel is involved, cover costs for travel, lodging, or meals.\""
+        },
+        {
+          "text": "Mentions assessing for diversity-washing ('diversity points')",
+          "passed": true,
+          "evidence": "\"Ask whether the conference is genuinely invested in inclusion, or just seeking 'diversity points'\""
+        },
+        {
+          "text": "Mentions tracking in the rladies_global_presentations repo",
+          "passed": true,
+          "evidence": "\"the event can be listed and tracked in the rladies_global_presentations repository\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 9,
+      "eval_name": "pe-conference",
+      "skill": "rladies-partnership-eval",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.4286,
+        "passed": 3,
+        "failed": 4,
+        "total": 7,
+        "time_seconds": 23.2,
+        "tokens": 16226,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says an R-Ladies branded event needs R-Ladies global-team approval",
+          "passed": true,
+          "evidence": "\"No individual R-Ladies member can unilaterally authorize the use of the R-Ladies brand\" and \"Contact R-Ladies Global\" step"
+        },
+        {
+          "text": "Says to email info@rladies.org (with the approval template)",
+          "passed": false,
+          "evidence": "absent \u2014 says to contact \"via the leadership team or the global Slack workspace\"; no email address or template provided"
+        },
+        {
+          "text": "Says to check the conference has a Code of Conduct",
+          "passed": true,
+          "evidence": "\"Code of Conduct: Does the conference have an enforceable CoC consistent with R-Ladies values?\""
+        },
+        {
+          "text": "Says to check the conference's own speaker/role diversity (systematically-excluded groups)",
+          "passed": false,
+          "evidence": "absent \u2014 mentions \"gender minorities\" and \"inclusivity\" but does not specify checking speaker/role representation of systematically-excluded groups across the conference programme"
+        },
+        {
+          "text": "Says invited R-Ladies speakers should have fees waived/reimbursed and travel/lodging/meals covered",
+          "passed": false,
+          "evidence": "absent \u2014 mentions \"Any compensation or sponsorship arrangements\" as information to gather, but does not state that fees must be waived or travel/lodging/meals covered"
+        },
+        {
+          "text": "Mentions assessing for diversity-washing ('diversity points')",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Mentions tracking in the rladies_global_presentations repo",
+          "passed": false,
+          "evidence": "absent"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 8,
+      "eval_name": "pe-paid-talk",
+      "skill": "rladies-partnership-eval",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8333,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 24.1,
+        "tokens": 18728,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says no \u2014 speakers cannot give talks about paid products/services (even if they don't work for the vendor)",
+          "passed": true,
+          "evidence": "\"speakers cannot give talks about paid products/services, even if they don't work at the company offering the product/service\""
+        },
+        {
+          "text": "Says chapters/events may not be used as a commercial vehicle / no commercial agenda",
+          "passed": true,
+          "evidence": "\"Chapters and events may not be 'used' by a corporation/as a commercial vehicle for private aims\" and \"no commercial agenda rule\""
+        },
+        {
+          "text": "Says sponsorship is OK only as venue, food, or supplies",
+          "passed": true,
+          "evidence": "\"Sponsorship in the form of venue space, food, or other supplies is explicitly permitted\""
+        },
+        {
+          "text": "Notes public R-Ladies events are free to participants",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Mentions R-Ladies' independence (no permanent ties that dictate decisions)",
+          "passed": true,
+          "evidence": "\"the support 'does not seek to dictate or influence R-Ladies Mission-driven activities/decision-making'\" and \"independence rule\""
+        },
+        {
+          "text": "Frames the decision against the mission/rules",
+          "passed": true,
+          "evidence": "Decision is explicitly framed as breaking \"the no commercial agenda rule, which is a hard disqualifier\" with rule quotes throughout"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 8,
+      "eval_name": "pe-paid-talk",
+      "skill": "rladies-partnership-eval",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6667,
+        "passed": 4,
+        "failed": 2,
+        "total": 6,
+        "time_seconds": 58.5,
+        "tokens": 16691,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says no \u2014 speakers cannot give talks about paid products/services (even if they don't work for the vendor)",
+          "passed": true,
+          "evidence": "\"not acceptable under R-Ladies Global guidelines\" and \"A company employee gives a talk about an open-source tool... not a sales pitch for a paid product\""
+        },
+        {
+          "text": "Says chapters/events may not be used as a commercial vehicle / no commercial agenda",
+          "passed": true,
+          "evidence": "\"turns the meetup into an advertising venue\" and \"non-commercial, community-first principles\""
+        },
+        {
+          "text": "Says sponsorship is OK only as venue, food, or supplies",
+          "passed": true,
+          "evidence": "\"A company sponsors a meetup (covers venue, food, etc.) with no speaking slot attached as a condition\""
+        },
+        {
+          "text": "Notes public R-Ladies events are free to participants",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Mentions R-Ladies' independence (no permanent ties that dictate decisions)",
+          "passed": false,
+          "evidence": "absent \u2014 response mentions \"community-first principles\" and fairness but never discusses R-Ladies' independence from sponsors dictating decisions"
+        },
+        {
+          "text": "Frames the decision against the mission/rules",
+          "passed": true,
+          "evidence": "\"conflicts with R-Ladies' non-commercial, community-first principles\" and references \"R-Ladies Global guidelines\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "rc-apppassword",
+      "skill": "rladies-rocur",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 24.3,
+        "tokens": 19264,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to remove the previous curator's app password",
+          "passed": true,
+          "evidence": "Step 1: 'Find the previous curator's app password and delete it using the trash icon.'"
+        },
+        {
+          "text": "Says to generate a new app password named firstname-lastname",
+          "passed": true,
+          "evidence": "Step 1: 'Name it `firstname-lastname` (the incoming curator's name).'"
+        },
+        {
+          "text": "Says NOT to allow access to direct messages when creating it",
+          "passed": true,
+          "evidence": "Step 1: 'Do not tick \"Allow access to your direct messages.\"'"
+        },
+        {
+          "text": "Says to email the app password to the curator (login user weare.rladies.org)",
+          "passed": true,
+          "evidence": "Step 2: 'Send Email 4'; email body states 'log into the We Are R-Ladies Bluesky account is [app password]' and login username weare.rladies.org is in Step 1 context and key security rules: 'the curator logs in with `weare.rladies.org` as the username'"
+        },
+        {
+          "text": "Notes access is revoked the following Sunday / remind them to sign out",
+          "passed": true,
+          "evidence": "Key security rules: 'The following Sunday, delete this curator's app password as part of onboarding the next curator'"
+        },
+        {
+          "text": "States the curation window (Monday 11:00 UTC to Saturday 16:00 UTC)",
+          "passed": true,
+          "evidence": "Email template: 'Your curation starts Monday, [start date] at 11:00 AM UTC and ends Saturday, [end date] at 4:00 PM UTC.'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "rc-apppassword",
+      "skill": "rladies-rocur",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 6,
+        "total": 6,
+        "time_seconds": 24.0,
+        "tokens": 16394,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to remove the previous curator's app password",
+          "passed": false,
+          "evidence": "absent \u2014 deletion of the previous curator's password is not mentioned; only 'Revoke access after the curation week' for the current curator"
+        },
+        {
+          "text": "Says to generate a new app password named firstname-lastname",
+          "passed": false,
+          "evidence": "absent \u2014 naming convention firstname-lastname not present; suggests 'curator-2026-06-24-jane' format instead"
+        },
+        {
+          "text": "Says NOT to allow access to direct messages when creating it",
+          "passed": false,
+          "evidence": "absent \u2014 no mention of the DM access toggle when creating the app password"
+        },
+        {
+          "text": "Says to email the app password to the curator (login user weare.rladies.org)",
+          "passed": false,
+          "evidence": "absent \u2014 explicitly says NOT to send via plain email; login as weare.rladies.org not mentioned"
+        },
+        {
+          "text": "Notes access is revoked the following Sunday / remind them to sign out",
+          "passed": false,
+          "evidence": "absent \u2014 'Revoke access after the curation week' mentioned but no specific Sunday timing or sign-out reminder"
+        },
+        {
+          "text": "States the curation window (Monday 11:00 UTC to Saturday 16:00 UTC)",
+          "passed": false,
+          "evidence": "absent \u2014 no curation window times or days specified"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "rc-onboard",
+      "skill": "rladies-rocur",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 35.1,
+        "tokens": 20221,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to add them to the curator schedule promptly",
+          "passed": true,
+          "evidence": "Step 1: '1. Add them to the curation schedule.'"
+        },
+        {
+          "text": "Says to save their photo to the Google Drive named YYYY-MM-DD-firstname (week's Monday)",
+          "passed": true,
+          "evidence": "Step 1: 'Save their photo to the shared Google Drive, named `YYYY-MM-DD-firstname` (where the date is the Monday of their curation week).'"
+        },
+        {
+          "text": "Says to email a confirmation of their curation week (Email 1)",
+          "passed": true,
+          "evidence": "Step 1: 'Send Email 1 \u2014 sign-up confirmation' with full template shown"
+        },
+        {
+          "text": "Says to update the Airtable admin checklist",
+          "passed": true,
+          "evidence": "Step 1: 'Update the RoCur Curator Sign Up Airtable checklist.'"
+        },
+        {
+          "text": "Says that ~1 week before, draft their intro graphic from the Canva RoCur brand template and send for approval",
+          "passed": true,
+          "evidence": "Step 2: 'Create their intro graphic using the Canva RoCur brand template (Brand \u25b8 Brand templates \u25b8 RoCur).' and Email 3 requests approval"
+        },
+        {
+          "text": "Says that the Sunday before, rotate/generate the Bluesky app password and send it",
+          "passed": true,
+          "evidence": "Step 3: 'Rotate the Bluesky app password' and 'Send Email 4 \u2014 app password'"
+        },
+        {
+          "text": "Mentions offering optional Buffer access",
+          "passed": true,
+          "evidence": "Step 2: 'If they want Buffer access: invite them in Buffer ... This is optional.'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "rc-onboard",
+      "skill": "rladies-rocur",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.2857,
+        "passed": 2,
+        "failed": 5,
+        "total": 7,
+        "time_seconds": 21.1,
+        "tokens": 16217,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to add them to the curator schedule promptly",
+          "passed": true,
+          "evidence": "Step 1: 'Confirm the week they will curate (check the existing schedule for availability)' and 'Add them to the curation schedule/calendar'"
+        },
+        {
+          "text": "Says to save their photo to the Google Drive named YYYY-MM-DD-firstname (week's Monday)",
+          "passed": false,
+          "evidence": "absent \u2014 photo collection mentioned generically but no Google Drive, no naming convention YYYY-MM-DD-firstname"
+        },
+        {
+          "text": "Says to email a confirmation of their curation week (Email 1)",
+          "passed": true,
+          "evidence": "Step 3: 'Send a welcome email/message confirming their scheduled week'"
+        },
+        {
+          "text": "Says to update the Airtable admin checklist",
+          "passed": false,
+          "evidence": "absent \u2014 Airtable not mentioned; only 'internal records (spreadsheet, Airtable, etc.)' in post-curation wrap-up, not as a checklist updated at each step"
+        },
+        {
+          "text": "Says that ~1 week before, draft their intro graphic from the Canva RoCur brand template and send for approval",
+          "passed": false,
+          "evidence": "absent \u2014 no mention of Canva, brand template, or sending a graphic for approval"
+        },
+        {
+          "text": "Says that the Sunday before, rotate/generate the Bluesky app password and send it",
+          "passed": false,
+          "evidence": "absent \u2014 no mention of app passwords or rotating credentials on Sunday; only generic 'Provide login credentials... securely'"
+        },
+        {
+          "text": "Mentions offering optional Buffer access",
+          "passed": false,
+          "evidence": "absent \u2014 Buffer not mentioned anywhere"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 6,
+      "eval_name": "ws-add-chapter",
+      "skill": "rladies-website",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 31.4,
+        "tokens": 20076,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to create a data/chapters/<country-state-city>.json file (filename becomes the URL)",
+          "passed": true,
+          "evidence": "\"create a new file at: data/chapters/<country-state-city>.json\" and \"The filename becomes the URL slug for the chapter page.\""
+        },
+        {
+          "text": "Mentions the status field, and that only 'active' shows on the world map",
+          "passed": true,
+          "evidence": "\"`status`: `prospective`, `active`, or `inactive`. **Only `active` appears on the world map.**\""
+        },
+        {
+          "text": "Mentions the urlname field (the meetup.com slug used to fetch events)",
+          "passed": true,
+          "evidence": "\"`urlname`: The meetup.com identifier; used to fetch event data from the meetup archive.\""
+        },
+        {
+          "text": "Mentions organizers.current and organizers.former",
+          "passed": true,
+          "evidence": "Both `organizers.current` and `organizers.former` listed in the field reference table with descriptions."
+        },
+        {
+          "text": "Mentions the social_media keys object",
+          "passed": true,
+          "evidence": "\"`social_media`: Omit unused keys entirely \u2014 do not leave them empty. Supported keys: `twitter`, `github`, `instagram`...\" with full key list."
+        },
+        {
+          "text": "Notes an optional chapter image under assets/chapters/",
+          "passed": true,
+          "evidence": "\"Place an image at: assets/chapters/<same-name>.(png|jpg|webp)\""
+        },
+        {
+          "text": "Says the JSON is validated (check-jsons) and submitted via a PR",
+          "passed": true,
+          "evidence": "\"**`check-jsons`** \u2014 validates your JSON against the chapter schema\" and full PR submission steps provided."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 6,
+      "eval_name": "ws-add-chapter",
+      "skill": "rladies-website",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 7,
+        "total": 7,
+        "time_seconds": 21.2,
+        "tokens": 16330,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to create a data/chapters/<country-state-city>.json file (filename becomes the URL)",
+          "passed": false,
+          "evidence": "Refers generically to \"chapters.yml\", \"chapters.json\", or \"similar\" files; never specifies the path `data/chapters/<country-state-city>.json` or that the filename becomes the URL."
+        },
+        {
+          "text": "Mentions the status field, and that only 'active' shows on the world map",
+          "passed": false,
+          "evidence": "absent \u2014 no `status` field mentioned anywhere in the response."
+        },
+        {
+          "text": "Mentions the urlname field (the meetup.com slug used to fetch events)",
+          "passed": false,
+          "evidence": "Mentions `meetup_url` as a full URL field, not `urlname` as a slug for fetching events."
+        },
+        {
+          "text": "Mentions organizers.current and organizers.former",
+          "passed": false,
+          "evidence": "absent \u2014 no organizer fields mentioned."
+        },
+        {
+          "text": "Mentions the social_media keys object",
+          "passed": false,
+          "evidence": "Lists `twitter` as a top-level field in a YAML example, not as a nested `social_media` object."
+        },
+        {
+          "text": "Notes an optional chapter image under assets/chapters/",
+          "passed": false,
+          "evidence": "absent \u2014 no mention of a chapter image or the `assets/chapters/` path."
+        },
+        {
+          "text": "Says the JSON is validated (check-jsons) and submitted via a PR",
+          "passed": false,
+          "evidence": "PR submission is mentioned, but `check-jsons` validation is absent \u2014 no CI check referenced."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 7,
+      "eval_name": "ws-pr-review",
+      "skill": "rladies-website",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 36.4,
+        "tokens": 19911,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says check-build is the gate \u2014 fix it first; read the log (bad frontmatter YAML, broken shortcode, or unresolvable image)",
+          "passed": true,
+          "evidence": "\"check-build is the gate. Until it's green, nothing else matters\" plus lists all three causes: bad frontmatter YAML, broken shortcode, unresolvable image."
+        },
+        {
+          "text": "Says to read the CI check comments in order",
+          "passed": true,
+          "evidence": "\"Read the remaining checks in order\" with ordered list: check-jsons, blog-lint, lighthouse, i18n-check."
+        },
+        {
+          "text": "Says to open the Netlify preview and check light AND dark mode",
+          "passed": true,
+          "evidence": "\"Open the Netlify preview\" and \"Light and dark mode \u2014 toggle dark mode and verify the page looks correct in both.\""
+        },
+        {
+          "text": "Mentions checking things CI can't (directory photos, byline/directory_id resolution, heading hierarchy, shortcode rendering)",
+          "passed": true,
+          "evidence": "All four explicitly listed: \"Directory photos\", \"directory_id author bylines resolve to a real profile\", \"Heading hierarchy\", \"Silent shortcode failures\"."
+        },
+        {
+          "text": "Says the default merge is rebase",
+          "passed": true,
+          "evidence": "\"Use Rebase merge (the default, matches `merge-pending`).\""
+        },
+        {
+          "text": "Says to watch the production build after merging",
+          "passed": true,
+          "evidence": "\"watch the production build (`build-production.yaml`) to confirm it succeeds and the live site reflects the change.\""
+        },
+        {
+          "text": "Notes using 'request changes' sparingly / kindly for first-timers",
+          "passed": true,
+          "evidence": "\"Request changes \u2014 a hard block; use sparingly\" and \"preferred for first-time contributors; leave inline `suggestion` blocks for one-click fixes.\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 7,
+      "eval_name": "ws-pr-review",
+      "skill": "rladies-website",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 7,
+        "total": 7,
+        "time_seconds": 21.6,
+        "tokens": 16054,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says check-build is the gate \u2014 fix it first; read the log (bad frontmatter YAML, broken shortcode, or unresolvable image)",
+          "passed": false,
+          "evidence": "Instructs to \"Start with the Netlify Preview\" first, contradicting the gate-first requirement. While it later lists similar failure causes, the prioritization is wrong."
+        },
+        {
+          "text": "Says to read the CI check comments in order",
+          "passed": false,
+          "evidence": "absent \u2014 no mention of reading CI checks in order or a sequenced list of checks."
+        },
+        {
+          "text": "Says to open the Netlify preview and check light AND dark mode",
+          "passed": false,
+          "evidence": "Says to open the Netlify preview, but dark mode is never mentioned."
+        },
+        {
+          "text": "Mentions checking things CI can't (directory photos, byline/directory_id resolution, heading hierarchy, shortcode rendering)",
+          "passed": false,
+          "evidence": "absent \u2014 none of these four specific items (directory photos, directory_id bylines, heading hierarchy, silent shortcode failures) are mentioned."
+        },
+        {
+          "text": "Says the default merge is rebase",
+          "passed": false,
+          "evidence": "absent \u2014 no mention of rebase merge or merge strategy."
+        },
+        {
+          "text": "Says to watch the production build after merging",
+          "passed": false,
+          "evidence": "absent \u2014 response ends at approving/not merging with red check; no post-merge monitoring mentioned."
+        },
+        {
+          "text": "Notes using 'request changes' sparingly / kindly for first-timers",
+          "passed": false,
+          "evidence": "Says \"Request changes if the build error will break the live site\" without any mention of first-timers or using the option sparingly."
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.9833,
+        "stddev": 0.0527,
+        "min": 0.8333,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 31.25,
+        "stddev": 4.347,
+        "min": 24.1,
+        "max": 36.4
+      },
+      "tokens": {
+        "mean": 19444.8,
+        "stddev": 743.5248,
+        "min": 18536,
+        "max": 20737
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.2482,
+        "stddev": 0.2182,
+        "min": 0.0,
+        "max": 0.6667
+      },
+      "time_seconds": {
+        "mean": 28.63,
+        "stddev": 11.3402,
+        "min": 21.1,
+        "max": 58.5
+      },
+      "tokens": {
+        "mean": 16380.1,
+        "stddev": 255.8912,
+        "min": 16054,
+        "max": 16752
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.74",
+      "time_seconds": "+2.6",
+      "tokens": "+3065"
+    }
+  },
+  "notes": [
+    "Assertion 'Says to export as PNG' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Gives steps to insert the image into the R/+ shape (e.g. clipping mask in Affinity)' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Mentions export (PNG/JPG)' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Explains claiming host: Participants list > Claim Host, then enter the host key' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says to make co-organizers co-hosts' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says to END the meeting (not just leave) so the next organizer can use the room' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says to collect a bio and their pronouns' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says to test screen-sharing ahead of time for online events' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says an R-Ladies branded event needs R-Ladies global-team approval' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says to check the conference has a Code of Conduct' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says no \u2014 speakers cannot give talks about paid products/services (even if they don't work for the vendor)' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says chapters/events may not be used as a commercial vehicle / no commercial agenda' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says sponsorship is OK only as venue, food, or supplies' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Frames the decision against the mission/rules' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says to add them to the curator schedule promptly' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says to email a confirmation of their curation week (Email 1)' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Skill lifts pass rate by +74% on average (with=98%, without=25%); biggest single-eval gap is 'rc-apppassword' (+100%).",
+    "16 assertion(s) pass in BOTH configs - to the extent these match generic packaging vocabulary the benchmark understates the skill's rOpenSci-specific value.",
+    "Skill adds 3065 tokens vs baseline on average and runs 3s slower; baseline time/tokens vary run-to-run because without the skill the model explores/searches, while with it the model answers from grounded references."
+  ]
+}

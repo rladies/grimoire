@@ -1,0 +1,7 @@
+.DS_Store
+.Rproj.user
+.Rhistory
+.impeccable/
+eval-workspace/**/review.html
+eval-workspace/**/with_skill/
+eval-workspace/**/without_skill/

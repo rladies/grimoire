@@ -1,0 +1,17 @@
+{
+  "eval_id": 2,
+  "eval_name": "blog-frontmatter",
+  "skill": "rladies-blog-post",
+  "prompt": "I'm writing a blog post for the R-Ladies website recapping our Oslo International Women's Day meetup. It's co-written by two of us and one person edited it. Where does the file go in the repo, and can you give me the YAML frontmatter to start from?",
+  "assertions": [
+    "Places the post at content/blog/<year>/<MM-DD-slug>/index.en.md (page bundle)",
+    "Mentions the `hugo new --kind blog` archetype command",
+    "Frontmatter lists authors with a directory_id field",
+    "Includes an editorial/editor field for the editor",
+    "Shows a contributions map plus per-person contribution letters",
+    "Uses a date in YYYY-MM-DD format",
+    "Includes an image with both path and alt text",
+    "Includes categories and tags",
+    "Notes the feature image lives in the same folder as index.en.md"
+  ]
+}

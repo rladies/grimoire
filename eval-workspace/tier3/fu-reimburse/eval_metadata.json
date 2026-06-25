@@ -1,0 +1,15 @@
+{
+  "eval_id": 2,
+  "eval_name": "fu-reimburse",
+  "skill": "rladies-funding",
+  "prompt": "I paid for a guest speaker's hotel for our R-Ladies event out of pocket. How do I get reimbursed by R-Ladies?",
+  "assertions": [
+    "Says to email finance@rladies.org BEFORE spending / that reimbursement needs pre-approval",
+    "Says to complete the Expense Reimbursement form",
+    "Says US residents get a check and those outside the US complete a Wire Form (IBAN) for a wire transfer",
+    "Says to combine the form and a receipt for every item into one PDF",
+    "States the PDF naming convention YYYYMMDD_SURNAMENAME.pdf",
+    "Notes requests are collated/submitted monthly (last week of the month)",
+    "Sends the PDF to finance@rladies.org"
+  ]
+}

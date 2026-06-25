@@ -1,0 +1,15 @@
+{
+  "eval_id": 3,
+  "eval_name": "blog-publish-flow",
+  "skill": "rladies-blog-post",
+  "prompt": "My R-Ladies blog post draft is finished. How do I get it reviewed and scheduled so it publishes next Tuesday on the website?",
+  "assertions": [
+    "Says to open a pull request (fork or push as website team)",
+    "Mentions CI checks: blog-lint and/or Lighthouse",
+    "Notes that body images must have alt text or CI fails",
+    "Says to set the frontmatter date to next Tuesday",
+    "Says to add the `pending` label",
+    "Explains the merge-pending workflow auto-merges on the publication date",
+    "Mentions the proposal/editorial review step"
+  ]
+}

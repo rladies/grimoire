@@ -1,0 +1,15 @@
+{
+  "eval_id": 4,
+  "eval_name": "rc-onboard",
+  "skill": "rladies-rocur",
+  "prompt": "I'm a WeAreRLadies RoCur admin and someone just signed up to curate. What are the steps to onboard them?",
+  "assertions": [
+    "Says to add them to the curator schedule promptly",
+    "Says to save their photo to the Google Drive named YYYY-MM-DD-firstname (week's Monday)",
+    "Says to email a confirmation of their curation week (Email 1)",
+    "Says to update the Airtable admin checklist",
+    "Says that ~1 week before, draft their intro graphic from the Canva RoCur brand template and send for approval",
+    "Says that the Sunday before, rotate/generate the Bluesky app password and send it",
+    "Mentions offering optional Buffer access"
+  ]
+}

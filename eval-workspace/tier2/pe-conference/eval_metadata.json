@@ -1,0 +1,15 @@
+{
+  "eval_id": 9,
+  "eval_name": "pe-conference",
+  "skill": "rladies-partnership-eval",
+  "prompt": "A conference reached out asking one of our R-Ladies to run an R-Ladies branded panel. How do we evaluate it and get it approved?",
+  "assertions": [
+    "Says an R-Ladies branded event needs R-Ladies global-team approval",
+    "Says to email info@rladies.org (with the approval template)",
+    "Says to check the conference has a Code of Conduct",
+    "Says to check the conference's own speaker/role diversity (systematically-excluded groups)",
+    "Says invited R-Ladies speakers should have fees waived/reimbursed and travel/lodging/meals covered",
+    "Mentions assessing for diversity-washing ('diversity points')",
+    "Mentions tracking in the rladies_global_presentations repo"
+  ]
+}

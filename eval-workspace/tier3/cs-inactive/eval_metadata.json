@@ -1,0 +1,14 @@
+{
+  "eval_id": 1,
+  "eval_name": "cs-inactive",
+  "skill": "rladies-chapter-setup",
+  "prompt": "Our R-Ladies chapter hasn't run an event in about 8 months and we just got a 'do you need help?' email from the global team. What's happening, and what are our options?",
+  "assertions": [
+    "Explains the chapter is considered inactive (no event in 6+ months)",
+    "Notes inactivity is reviewed periodically (e.g. quarterly) and leads toward retirement if unaddressed",
+    "Lists options like the mentoring programme, asking on the organizers' Slack, or handing the chapter over",
+    "Says running an event removes the chapter from the retirement list",
+    "Notes that without a reply (~2 weeks) a retirement notice follows",
+    "Mentions transitioning organizers / sending account credentials, or reactivating later"
+  ]
+}

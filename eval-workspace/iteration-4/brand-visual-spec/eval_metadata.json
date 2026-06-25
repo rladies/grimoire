@@ -1,0 +1,17 @@
+{
+  "eval_id": 0,
+  "eval_name": "brand-visual-spec",
+  "skill": "rladies-brand",
+  "prompt": "I'm building a slide template for my R-Ladies chapter. What are the exact brand colours (with hex codes) and fonts I should use, and the key accessibility rules I need to follow?",
+  "assertions": [
+    "Gives Blue Violet as the main colour with hex #881ef9",
+    "Names Poppins as the font",
+    "Names Inconsolata for monospace/code",
+    "Gives Bastille Black #2f2f30 and Lavender White #ededf4 instead of pure black/white",
+    "States minimum text size of 6 points",
+    "States at least 1.5 pt line spacing",
+    "Says avoid italic, underline, and all-caps (use bold for emphasis)",
+    "Mentions high contrast requirement",
+    "Points to brand.yml / glamour / a machine-readable brand asset"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "eval_id": 3,
+  "eval_name": "ce-speakers",
+  "skill": "rladies-chapter-event",
+  "prompt": "How do I find and prepare a speaker for our R-Ladies meetup, and what should I collect from them beforehand?",
+  "assertions": [
+    "Says to look for speakers at least two months ahead",
+    "Emphasizes speaker diversity (avoid a year of all-white speakers / all-white panels)",
+    "Names places to find diverse speakers (R-Ladies Directory, Community Slack, minority-focused communities)",
+    "Says to collect a bio and their pronouns",
+    "Says to collect an informative abstract (and their capacity)",
+    "Says to test screen-sharing ahead of time for online events",
+    "Mentions funding accessible travel/accommodation where applicable",
+    "Says to thank the speaker and encourage submitting materials to R Weekly"
+  ]
+}

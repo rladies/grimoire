@@ -1,0 +1,668 @@
+{
+  "metadata": {
+    "skill_name": "ropensci-skills",
+    "skill_path": "/Users/athanasm/workspace/rladies/rladies-skills",
+    "executor_model": "claude-sonnet-4-6",
+    "timestamp": "2026-06-25T14:28:56.220647+00:00",
+    "evals_run": [
+      5,
+      4,
+      1,
+      0,
+      3,
+      2
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 5,
+      "eval_name": "cm-harassment",
+      "skill": "rladies-community-moderation",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 22.4,
+        "tokens": 18262,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to report to reporting@rladies.org (the Global Leadership Team)",
+          "passed": true,
+          "evidence": "\"email `reporting@rladies.org` \u2014 this reaches the Global Leadership Team\""
+        },
+        {
+          "text": "Mentions the @Community Management Team as an in-Slack contact",
+          "passed": true,
+          "evidence": "\"In Slack: Contact `@Community Management Team` directly.\""
+        },
+        {
+          "text": "Notes the Code of Conduct applies across all R-Ladies spaces",
+          "passed": true,
+          "evidence": "\"The Code of Conduct applies to all R-Ladies spaces, including Slack.\""
+        },
+        {
+          "text": "Notes a person asked to stop must comply immediately and leadership may act up to expulsion",
+          "passed": true,
+          "evidence": "\"Participants asked to stop any harassing behaviour are expected to comply immediately.\" and \"up to and including: Expulsion from all R-Ladies spaces\""
+        },
+        {
+          "text": "Mentions not sharing Slack content outside Slack without consent / handling it with care",
+          "passed": true,
+          "evidence": "\"Do not share details of the report with anyone outside the moderation/leadership team.\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "cm-harassment",
+      "skill": "rladies-community-moderation",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.4,
+        "passed": 2,
+        "failed": 3,
+        "total": 5,
+        "time_seconds": 21.2,
+        "tokens": 16149,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to report to reporting@rladies.org (the Global Leadership Team)",
+          "passed": false,
+          "evidence": "absent \u2014 only says \"contact global team at their designated CoC reporting channel or email (typically listed in the CoC document itself)\" without naming reporting@rladies.org"
+        },
+        {
+          "text": "Mentions the @Community Management Team as an in-Slack contact",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Notes the Code of Conduct applies across all R-Ladies spaces",
+          "passed": true,
+          "evidence": "\"R-Ladies Global has a Code of Conduct (CoC) that applies to all community spaces including Slack.\""
+        },
+        {
+          "text": "Notes a person asked to stop must comply immediately and leadership may act up to expulsion",
+          "passed": false,
+          "evidence": "Mentions \"permanent ban from R-Ladies spaces\" but does not state the person must comply immediately; the \"comply immediately\" language is absent"
+        },
+        {
+          "text": "Mentions not sharing Slack content outside Slack without consent / handling it with care",
+          "passed": true,
+          "evidence": "\"Do not reveal the reporter's identity to the accused without their explicit consent.\" and \"Do not share details of the report publicly or in ways that could identify the reporter.\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "cm-promotion",
+      "skill": "rladies-community-moderation",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8,
+        "passed": 4,
+        "failed": 1,
+        "total": 5,
+        "time_seconds": 20.1,
+        "tokens": 18171,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says promoting commercial products is not allowed on the Slack",
+          "passed": true,
+          "evidence": "\"Not allowed: promoting commercial products\""
+        },
+        {
+          "text": "Notes a member discount must be cleared with the leadership team first",
+          "passed": true,
+          "evidence": "\"they must discuss it with the leadership team first \u2014 that is the only path to any commercial promotion being permitted\""
+        },
+        {
+          "text": "Contrasts with what IS allowed (jobs, events, resources, #rstats news, questions)",
+          "passed": true,
+          "evidence": "\"Allowed: sharing resources, #rstats news, job opportunities, events, and community ideas\""
+        },
+        {
+          "text": "Says if unsure to ask the @Community Management Team in Slack or email slack@rladies.org",
+          "passed": true,
+          "evidence": "\"check with the `@Community Management Team` in Slack, or email `slack@rladies.org` before acting\""
+        },
+        {
+          "text": "Frames it under the community guidelines / Code of Conduct",
+          "passed": false,
+          "evidence": "Response frames removal under \"policy\" and what is \"not allowed\" but never explicitly names the Code of Conduct or community guidelines document"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "cm-promotion",
+      "skill": "rladies-community-moderation",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "failed": 2,
+        "total": 5,
+        "time_seconds": 21.7,
+        "tokens": 16214,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says promoting commercial products is not allowed on the Slack",
+          "passed": true,
+          "evidence": "\"Unsolicited paid promotions are not permitted. Posting advertisements for commercial products, paid courses, or services without prior approval from organizers is against community guidelines.\""
+        },
+        {
+          "text": "Notes a member discount must be cleared with the leadership team first",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Contrasts with what IS allowed (jobs, events, resources, #rstats news, questions)",
+          "passed": true,
+          "evidence": "\"sharing a free preview, offering to present at a chapter event, or using a dedicated jobs/resources channel if one exists and permits it\""
+        },
+        {
+          "text": "Says if unsure to ask the @Community Management Team in Slack or email slack@rladies.org",
+          "passed": false,
+          "evidence": "absent \u2014 no mention of @Community Management Team or slack@rladies.org"
+        },
+        {
+          "text": "Frames it under the community guidelines / Code of Conduct",
+          "passed": true,
+          "evidence": "\"against community guidelines\", \"link to the code of conduct or community guidelines if available\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "cs-inactive",
+      "skill": "rladies-chapter-setup",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 30.1,
+        "tokens": 19315,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Explains the chapter is considered inactive (no event in 6+ months)",
+          "passed": true,
+          "evidence": "\"R-Ladies requires every chapter to run at least one event every 6 months. At 8 months without an event, your chapter is past that threshold and has entered the inactivity review process.\""
+        },
+        {
+          "text": "Notes inactivity is reviewed periodically (e.g. quarterly) and leads toward retirement if unaddressed",
+          "passed": true,
+          "evidence": "describes the full retirement cadence sequence ending in \"Retirement notice email with a specific retirement date\" if unaddressed"
+        },
+        {
+          "text": "Lists options like the mentoring programme, asking on the organizers' Slack, or handing the chapter over",
+          "passed": true,
+          "evidence": "\"**Mentoring programme**\", \"**Quick advice** on the Organizers' Slack\", \"Help **finding someone to take over**\""
+        },
+        {
+          "text": "Says running an event removes the chapter from the retirement list",
+          "passed": true,
+          "evidence": "\"**Run an event.** That single step removes your chapter from the retirement list.\""
+        },
+        {
+          "text": "Notes that without a reply (~2 weeks) a retirement notice follows",
+          "passed": true,
+          "evidence": "\"Wait ~2 weeks. Slack nudge. Wait ~2 weeks. Retirement notice email with a specific retirement date.\""
+        },
+        {
+          "text": "Mentions transitioning organizers / sending account credentials, or reactivating later",
+          "passed": true,
+          "evidence": "\"Transition to a new organizer\" section; \"Email `chapters@rladies.org` with login credentials for the chapter email, Slack, and any social accounts\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "cs-inactive",
+      "skill": "rladies-chapter-setup",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.3333,
+        "passed": 2,
+        "failed": 4,
+        "total": 6,
+        "time_seconds": 29.1,
+        "tokens": 16380,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Explains the chapter is considered inactive (no event in 6+ months)",
+          "passed": true,
+          "evidence": "\"Eight months without an event puts your chapter in what R-Ladies Global considers an 'inactive' status.\""
+        },
+        {
+          "text": "Notes inactivity is reviewed periodically (e.g. quarterly) and leads toward retirement if unaddressed",
+          "passed": false,
+          "evidence": "says the team \"monitors\" and \"reaches out\" but no periodic review cadence or retirement consequence is mentioned"
+        },
+        {
+          "text": "Lists options like the mentoring programme, asking on the organizers' Slack, or handing the chapter over",
+          "passed": false,
+          "evidence": "lists reactivate/recruit/hiatus/transfer/merge/closure but no mentoring programme and no mention of Organizers' Slack for advice"
+        },
+        {
+          "text": "Says running an event removes the chapter from the retirement list",
+          "passed": false,
+          "evidence": "absent \u2014 suggests running a low-effort event to \"break the inertia\" but never states it removes from a retirement list"
+        },
+        {
+          "text": "Notes that without a reply (~2 weeks) a retirement notice follows",
+          "passed": false,
+          "evidence": "absent \u2014 says the email is \"an open door, not a deadline\""
+        },
+        {
+          "text": "Mentions transitioning organizers / sending account credentials, or reactivating later",
+          "passed": true,
+          "evidence": "\"Transfer leadership\" option: \"global team can help find successors or facilitate the handover process (Meetup group, social accounts, chapter email)\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "cs-start",
+      "skill": "rladies-chapter-setup",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 35.3,
+        "tokens": 21312,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to email chapters@rladies.org",
+          "passed": true,
+          "evidence": "\"Email **`chapters@rladies.org`**\""
+        },
+        {
+          "text": "Says to use a personal email address (not work/university)",
+          "passed": true,
+          "evidence": "\"from your **personal email** (not a work or university address)\""
+        },
+        {
+          "text": "Says the chapter receives a Meetup Pro account",
+          "passed": true,
+          "evidence": "\"**Meetup Pro page** \u2014 named 'R-Ladies YourCity'\""
+        },
+        {
+          "text": "Says the chapter receives a chapter email like yourcity@rladies.org",
+          "passed": true,
+          "evidence": "\"**Chapter email** \u2014 `yourcity@rladies.org` on Google Workspace\""
+        },
+        {
+          "text": "Says you're added to the Organizers' Slack (and/or Community Slack)",
+          "passed": true,
+          "evidence": "\"**Organizers' Slack** invite\" and \"**Community Slack** invite\""
+        },
+        {
+          "text": "Mentions a GitHub chapter data entry / prospective status",
+          "passed": true,
+          "evidence": "\"**GitHub chapter data entry** \u2014 your chapter is added to the R-Ladies website data with status `prospective`\""
+        },
+        {
+          "text": "States the activity expectation: first event within 6 months, then at least one event every 6 months",
+          "passed": true,
+          "evidence": "\"Hold your **first event within 6 months** of onboarding. After that, run **at least one event every 6 months**\""
+        },
+        {
+          "text": "Mentions the mission-alignment confirmation (identify as a woman or gender minority, interested in R)",
+          "passed": true,
+          "evidence": "\"Do you identify as a woman or gender minority, and are you interested in the R programming language?\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "cs-start",
+      "skill": "rladies-chapter-setup",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.375,
+        "passed": 3,
+        "failed": 5,
+        "total": 8,
+        "time_seconds": 34.0,
+        "tokens": 16462,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to email chapters@rladies.org",
+          "passed": false,
+          "evidence": "absent \u2014 says to apply through the R-Ladies Global website with no email address given"
+        },
+        {
+          "text": "Says to use a personal email address (not work/university)",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Says the chapter receives a Meetup Pro account",
+          "passed": true,
+          "evidence": "\"R-Ladies Global manages a Pro Meetup account. Your chapter gets a Meetup group created under the R-Ladies umbrella\""
+        },
+        {
+          "text": "Says the chapter receives a chapter email like yourcity@rladies.org",
+          "passed": true,
+          "evidence": "\"A chapter email address under the rladies.org domain\""
+        },
+        {
+          "text": "Says you're added to the Organizers' Slack (and/or Community Slack)",
+          "passed": true,
+          "evidence": "\"You and your co-organizers are added to the R-Ladies organizers Slack workspace\""
+        },
+        {
+          "text": "Mentions a GitHub chapter data entry / prospective status",
+          "passed": false,
+          "evidence": "mentions GitHub organization access for creating a chapter repository, not a data entry with prospective status"
+        },
+        {
+          "text": "States the activity expectation: first event within 6 months, then at least one event every 6 months",
+          "passed": false,
+          "evidence": "absent \u2014 no activity timeline or frequency requirement mentioned"
+        },
+        {
+          "text": "Mentions the mission-alignment confirmation (identify as a woman or gender minority, interested in R)",
+          "passed": false,
+          "evidence": "absent \u2014 mentions gender minority priority generally but not the onboarding confirmation step"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "fu-grant",
+      "skill": "rladies-funding",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 27.1,
+        "tokens": 18452,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to first email grants@rladies.org (Batool Almarzouq) to express interest",
+          "passed": true,
+          "evidence": "\"Email grants@rladies.org (Batool Almarzouq) to say your chapter wants to apply\""
+        },
+        {
+          "text": "Says to state the desired amount, the chapter, and the organizer responsible for the grant",
+          "passed": true,
+          "evidence": "\"The amount you are requesting / Your chapter name / The organizer who will be responsible for the grant\""
+        },
+        {
+          "text": "Says to complete the R Consortium RUGS online application form with a detailed proposal",
+          "passed": true,
+          "evidence": "\"Complete the R Consortium RUGS application at https://r-consortium.org/all-projects/rugsprogram.html \u2014 Write a detailed proposal\""
+        },
+        {
+          "text": "Says to confirm submission with Batool and report the submission date",
+          "passed": true,
+          "evidence": "\"email Batool again at grants@rladies.org to confirm the submission and report the date you submitted\""
+        },
+        {
+          "text": "Notes funds are transferred to a chapter account and to keep clear records of expenses",
+          "passed": true,
+          "evidence": "\"Transfer them to a suitable chapter account and keep clear records of all grant-related expenses throughout the grant period\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "fu-grant",
+      "skill": "rladies-funding",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 5,
+        "total": 5,
+        "time_seconds": 21.6,
+        "tokens": 16268,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to first email grants@rladies.org (Batool Almarzouq) to express interest",
+          "passed": false,
+          "evidence": "absent \u2014 says \"coordinate with R-Ladies Global\" and check guide.rladies.org; no grants@rladies.org or Batool Almarzouq mentioned"
+        },
+        {
+          "text": "Says to state the desired amount, the chapter, and the organizer responsible for the grant",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Says to complete the R Consortium RUGS online application form with a detailed proposal",
+          "passed": false,
+          "evidence": "Describes the ISC Grant Program generically; no mention of RUGS program or RUGS-specific form URL"
+        },
+        {
+          "text": "Says to confirm submission with Batool and report the submission date",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Notes funds are transferred to a chapter account and to keep clear records of expenses",
+          "passed": false,
+          "evidence": "absent \u2014 mentions ISC progress reports and final blog post but not transferring funds to a chapter account or keeping expense records"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "fu-reimburse",
+      "skill": "rladies-funding",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 29.7,
+        "tokens": 18588,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to email finance@rladies.org BEFORE spending / that reimbursement needs pre-approval",
+          "passed": true,
+          "evidence": "\"ideally you contact finance before spending\" and \"Email finance@rladies.org explaining the expense\""
+        },
+        {
+          "text": "Says to complete the Expense Reimbursement form",
+          "passed": true,
+          "evidence": "\"Fill in the R Consortium Expense Reimbursement form they send you\""
+        },
+        {
+          "text": "Says US residents get a check and those outside the US complete a Wire Form (IBAN) for a wire transfer",
+          "passed": true,
+          "evidence": "\"If you are outside the US, also complete the Wire Form (you will need your IBAN for the wire transfer payment). If you are in the US, you will receive a check\""
+        },
+        {
+          "text": "Says to combine the form and a receipt for every item into one PDF",
+          "passed": true,
+          "evidence": "\"Combine into a single PDF: 1. The completed reimbursement form 2. The wire form (if applicable) 3. The hotel receipt\""
+        },
+        {
+          "text": "States the PDF naming convention YYYYMMDD_SURNAMENAME.pdf",
+          "passed": true,
+          "evidence": "\"Name the file: YYYYMMDD_SURNAMENAME.pdf using today's submission date (e.g. 20260625_SmithJane.pdf)\""
+        },
+        {
+          "text": "Notes requests are collated/submitted monthly (last week of the month)",
+          "passed": true,
+          "evidence": "\"Reimbursement requests are collated and submitted to the funding body once a month, usually in the last week\""
+        },
+        {
+          "text": "Sends the PDF to finance@rladies.org",
+          "passed": true,
+          "evidence": "\"Email the PDF to finance@rladies.org\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "fu-reimburse",
+      "skill": "rladies-funding",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 7,
+        "total": 7,
+        "time_seconds": 311.0,
+        "tokens": 16753,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to email finance@rladies.org BEFORE spending / that reimbursement needs pre-approval",
+          "passed": false,
+          "evidence": "Mentions pre-approval concept and info@rladies.org but never mentions finance@rladies.org"
+        },
+        {
+          "text": "Says to complete the Expense Reimbursement form",
+          "passed": false,
+          "evidence": "absent \u2014 directs user to Open Collective; no Expense Reimbursement form mentioned"
+        },
+        {
+          "text": "Says US residents get a check and those outside the US complete a Wire Form (IBAN) for a wire transfer",
+          "passed": false,
+          "evidence": "absent \u2014 mentions PayPal or bank transfer via Open Collective, not US check / IBAN Wire Form"
+        },
+        {
+          "text": "Says to combine the form and a receipt for every item into one PDF",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "States the PDF naming convention YYYYMMDD_SURNAMENAME.pdf",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Notes requests are collated/submitted monthly (last week of the month)",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Sends the PDF to finance@rladies.org",
+          "passed": false,
+          "evidence": "absent \u2014 directs to Open Collective, not finance@rladies.org"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.9667,
+        "stddev": 0.0816,
+        "min": 0.8,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 27.45,
+        "stddev": 5.5381,
+        "min": 20.1,
+        "max": 35.3
+      },
+      "tokens": {
+        "mean": 19016.6667,
+        "stddev": 1195.3941,
+        "min": 18171,
+        "max": 21312
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.2847,
+        "stddev": 0.2389,
+        "min": 0.0,
+        "max": 0.6
+      },
+      "time_seconds": {
+        "mean": 73.1,
+        "stddev": 116.6611,
+        "min": 21.2,
+        "max": 311.0
+      },
+      "tokens": {
+        "mean": 16371.0,
+        "stddev": 218.5534,
+        "min": 16149,
+        "max": 16753
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.68",
+      "time_seconds": "-45.6",
+      "tokens": "+2646"
+    }
+  },
+  "notes": [
+    "Assertion 'Notes the Code of Conduct applies across all R-Ladies spaces' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Mentions not sharing Slack content outside Slack without consent / handling it with care' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says promoting commercial products is not allowed on the Slack' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Contrasts with what IS allowed (jobs, events, resources, #rstats news, questions)' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Explains the chapter is considered inactive (no event in 6+ months)' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Mentions transitioning organizers / sending account credentials, or reactivating later' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says the chapter receives a Meetup Pro account' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says the chapter receives a chapter email like yourcity@rladies.org' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says you're added to the Organizers' Slack (and/or Community Slack)' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Skill lifts pass rate by +68% on average (with=97%, without=28%); biggest single-eval gap is 'fu-grant' (+100%).",
+    "9 assertion(s) pass in BOTH configs - to the extent these match generic packaging vocabulary the benchmark understates the skill's rOpenSci-specific value.",
+    "Skill adds 2646 tokens vs baseline on average and runs 46s faster; baseline time/tokens vary run-to-run because without the skill the model explores/searches, while with it the model answers from grounded references."
+  ]
+}

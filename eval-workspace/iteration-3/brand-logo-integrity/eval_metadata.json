@@ -1,0 +1,14 @@
+{
+  "eval_id": 10,
+  "eval_name": "brand-logo-integrity",
+  "skill": "rladies-brand",
+  "prompt": "For our R-Ladies chapter banner I want to rotate the R in the logo a bit and swap the font to Montserrat to make it pop. Is that okay, and what am I actually allowed to customise on the logo?",
+  "assertions": [
+    "Says do NOT rotate, skew, stretch, or change the logo's proportions",
+    "Says do NOT move the R icon relative to its text",
+    "Says do NOT recreate the logo in a different font (so Montserrat is not allowed)",
+    "Says the R and + submark CAN be filled with images or brand colours",
+    "Notes any customised parts must contrast enough with their background",
+    "Points to the Canva/Affinity guidance for how to customise the submark"
+  ]
+}

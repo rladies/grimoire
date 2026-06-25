@@ -1,0 +1,14 @@
+{
+  "eval_id": 9,
+  "eval_name": "abstract-invite-email",
+  "skill": "rladies-abstract-review",
+  "prompt": "Can you write the email to ask one of our volunteers to review someone's conference abstract? The conference deadline is March 15, and the doc is at https://docs.example.com/abstract123.",
+  "assertions": [
+    "Warm, low-pressure tone that thanks the volunteer",
+    "Asks if they have time 'in the next week or so' (or similar near-term, soft ask)",
+    "States the conference deadline (March 15)",
+    "Includes the document link",
+    "Makes it easy to decline and offers to reassign",
+    "Frames it as the R-Ladies abstract review program"
+  ]
+}

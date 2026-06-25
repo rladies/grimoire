@@ -1,0 +1,15 @@
+{
+  "eval_id": 0,
+  "eval_name": "ba-hex-sticker",
+  "skill": "rladies-branded-assets",
+  "prompt": "How do I make a hex sticker for my R-Ladies chapter? I have Affinity Studio installed.",
+  "assertions": [
+    "Says to start from the official Affinity hex template",
+    "Says to edit the Content layer with the chapter name / elements",
+    "Says to recolour using the brand hex codes / brand colours",
+    "Mentions batch-selecting strokes via Layer > Select > Same > Stroke Colour",
+    "Says to export as PNG",
+    "States a logo-integrity rule (don't move/rotate/distort the R relative to the text)",
+    "Mentions the Canva R+ template as an alternative"
+  ]
+}

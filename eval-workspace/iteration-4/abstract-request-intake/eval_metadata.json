@@ -1,0 +1,14 @@
+{
+  "eval_id": 14,
+  "eval_name": "abstract-request-intake",
+  "skill": "rladies-abstract-review",
+  "prompt": "A member asked how they can get feedback on their conference abstract through R-Ladies. How do they request it, and how does the process work?",
+  "assertions": [
+    "Points to the abstract request form (rladies.org/form/abstract-request)",
+    "Says to request at least three weeks before the conference deadline",
+    "Notes the service is for women and gender minorities",
+    "Explains reviewers give constructive feedback on topic/pitch, phrasing, and subject matter",
+    "Notes roughly 3 reviewers look at each abstract",
+    "Mentions it is coordinated/tracked (Airtable and/or the #team-abstract_review channel)"
+  ]
+}

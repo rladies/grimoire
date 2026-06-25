@@ -1,0 +1,13 @@
+{
+  "eval_id": 5,
+  "eval_name": "cm-harassment",
+  "skill": "rladies-community-moderation",
+  "prompt": "A member told me they're being harassed by another member in the R-Ladies community Slack. What should I do?",
+  "assertions": [
+    "Says to report to reporting@rladies.org (the Global Leadership Team)",
+    "Mentions the @Community Management Team as an in-Slack contact",
+    "Notes the Code of Conduct applies across all R-Ladies spaces",
+    "Notes a person asked to stop must comply immediately and leadership may act up to expulsion",
+    "Mentions not sharing Slack content outside Slack without consent / handling it with care"
+  ]
+}

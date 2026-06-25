@@ -1,0 +1,16 @@
+{
+  "eval_id": 0,
+  "eval_name": "cs-start",
+  "skill": "rladies-chapter-setup",
+  "prompt": "I want to start a new R-Ladies chapter in my city. How do I get going, and what will the chapter be set up with?",
+  "assertions": [
+    "Says to email chapters@rladies.org",
+    "Says to use a personal email address (not work/university)",
+    "Says the chapter receives a Meetup Pro account",
+    "Says the chapter receives a chapter email like yourcity@rladies.org",
+    "Says you're added to the Organizers' Slack (and/or Community Slack)",
+    "Mentions a GitHub chapter data entry / prospective status",
+    "States the activity expectation: first event within 6 months, then at least one event every 6 months",
+    "Mentions the mission-alignment confirmation (identify as a woman or gender minority, interested in R)"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "eval_id": 2,
+  "eval_name": "ce-online-zoom",
+  "skill": "rladies-chapter-event",
+  "prompt": "We're hosting an online R-Ladies talk on the shared R-Ladies Zoom. How do I book it and start as host on the day?",
+  "assertions": [
+    "Says to book via the Calendly link in the #online_meetups Slack channel (and not to share it publicly)",
+    "Says to put that exact Calendly/email Zoom link on Meetup and NOT connect a personal Zoom account",
+    "Mentions both the passcode and the host key",
+    "Recommends a ~15-minute buffer before the announced start time",
+    "Explains claiming host: Participants list > Claim Host, then enter the host key",
+    "Says to make co-organizers co-hosts",
+    "Says to remind attendees of the Code of Conduct at the start",
+    "Says to END the meeting (not just leave) so the next organizer can use the room"
+  ]
+}

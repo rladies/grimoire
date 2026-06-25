@@ -1,0 +1,15 @@
+{
+  "eval_id": 6,
+  "eval_name": "ws-add-chapter",
+  "skill": "rladies-website",
+  "prompt": "How do I add a brand-new R-Ladies chapter to the website?",
+  "assertions": [
+    "Says to create a data/chapters/<country-state-city>.json file (filename becomes the URL)",
+    "Mentions the status field, and that only 'active' shows on the world map",
+    "Mentions the urlname field (the meetup.com slug used to fetch events)",
+    "Mentions organizers.current and organizers.former",
+    "Mentions the social_media keys object",
+    "Notes an optional chapter image under assets/chapters/",
+    "Says the JSON is validated (check-jsons) and submitted via a PR"
+  ]
+}

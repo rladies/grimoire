@@ -1,0 +1,13 @@
+{
+  "eval_id": 4,
+  "eval_name": "cm-promotion",
+  "skill": "rladies-community-moderation",
+  "prompt": "Someone posted an ad for their paid R course in the R-Ladies community Slack. Should I remove it, and what's our policy on promotion?",
+  "assertions": [
+    "Says promoting commercial products is not allowed on the Slack",
+    "Notes a member discount must be cleared with the leadership team first",
+    "Contrasts with what IS allowed (jobs, events, resources, #rstats news, questions)",
+    "Says if unsure to ask the @Community Management Team in Slack or email slack@rladies.org",
+    "Frames it under the community guidelines / Code of Conduct"
+  ]
+}

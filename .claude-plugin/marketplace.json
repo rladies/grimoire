@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "rladies-skills",
+  "description": "Agent Skills that help the R-Ladies community and global team follow the R-Ladies guide \u2014 brand and voice, blogging, translation, social media, abstract review, chapters and events, and the website.",
+  "version": "0.1.0",
+  "owner": {
+    "name": "R-Ladies Global",
+    "email": "infrastructure@rladies.org"
+  },
+  "plugins": [
+    {
+      "name": "rladies-skills",
+      "source": "./",
+      "description": "Composing skills for R-Ladies community and global-team work, distilled from guide.rladies.org."
+    }
+  ]
+}

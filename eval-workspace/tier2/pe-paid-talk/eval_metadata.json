@@ -1,0 +1,14 @@
+{
+  "eval_id": 8,
+  "eval_name": "pe-paid-talk",
+  "skill": "rladies-partnership-eval",
+  "prompt": "A software company wants to sponsor our R-Ladies meetup and, in exchange, give a talk about their paid analytics product. Can we accept?",
+  "assertions": [
+    "Says no — speakers cannot give talks about paid products/services (even if they don't work for the vendor)",
+    "Says chapters/events may not be used as a commercial vehicle / no commercial agenda",
+    "Says sponsorship is OK only as venue, food, or supplies",
+    "Notes public R-Ladies events are free to participants",
+    "Mentions R-Ladies' independence (no permanent ties that dictate decisions)",
+    "Frames the decision against the mission/rules"
+  ]
+}

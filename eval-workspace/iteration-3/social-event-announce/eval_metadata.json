@@ -1,0 +1,16 @@
+{
+  "eval_id": 4,
+  "eval_name": "social-event-announce",
+  "skill": "rladies-social-posts",
+  "prompt": "Can you draft a Bluesky and a LinkedIn post announcing R-Ladies Sao Paulo's upcoming online workshop on data viz with ggplot2? Also tell me the right image size for each and when I should schedule them.",
+  "assertions": [
+    "Gives Bluesky image ratio 16:9",
+    "Gives LinkedIn image ratio 1:1",
+    "Mentions posting 2-3 times per week",
+    "Recommends scheduling weekdays 14:00-16:00 UTC",
+    "Reminds to add alt text to images",
+    "Writes copy in the R-Ladies voice (we/our, spotlights the chapter)",
+    "Includes hashtags #RLadies and #RStats",
+    "Mentions scheduling via Buffer"
+  ]
+}

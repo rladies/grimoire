@@ -1,0 +1,15 @@
+{
+  "eval_id": 11,
+  "eval_name": "blog-shortcodes",
+  "skill": "rladies-blog-post",
+  "prompt": "In my R-Ladies blog post I want a warning callout box and a figure with a caption, and I'm writing the post in Quarto. How do I do those?",
+  "assertions": [
+    "Gives the callout shortcode syntax with type, e.g. {{< callout type=\"warning\" >}} ... {{< /callout >}}",
+    "Lists the callout types (tip, info, note, warning, danger)",
+    "Shows the image-as-figure markdown syntax ![alt](image \"caption\")",
+    "Notes alt text is required / always provide alt text",
+    "For Quarto, says the format should be hugo-md",
+    "Says to commit the rendered .md alongside the .qmd source",
+    "Mentions fig-alt and fig-cap for figures produced by code chunks"
+  ]
+}

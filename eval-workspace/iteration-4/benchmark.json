@@ -1,0 +1,1734 @@
+{
+  "metadata": {
+    "skill_name": "ropensci-skills",
+    "skill_path": "/Users/athanasm/workspace/rladies/rladies-skills",
+    "executor_model": "claude-sonnet-4-6",
+    "timestamp": "2026-06-24T19:10:20.042118+00:00",
+    "evals_run": [
+      8,
+      9,
+      14,
+      2,
+      3,
+      11,
+      10,
+      0,
+      1,
+      5,
+      4,
+      12,
+      7,
+      13,
+      6
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 8,
+      "eval_name": "abstract-coordinate",
+      "skill": "rladies-abstract-review",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 38.7,
+        "tokens": 18661,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to check the deadline, the requester's preferred reviewer language/gender, comments, and that the doc is accessible",
+          "passed": true,
+          "evidence": "`conf_deadline` \u2014 is there at least three weeks until the deadline? ... `comments` and `Reviewer Preferences` \u2014 does the requester have preferred reviewer language or gender? ... `abstract_url` \u2014 open the link and confirm the document is accessible"
+        },
+        {
+          "text": "Says to pick reviewers from the volunteers table, favouring people with fewer recent reviews",
+          "passed": true,
+          "evidence": "Open the `volunteers` table and look at the `Reviews requested` and `Review completed` counters. Favour people who have fewer recent reviews to spread the load."
+        },
+        {
+          "text": "Says to increment 'Reviews requested' for chosen volunteers",
+          "passed": true,
+          "evidence": "increment their `Reviews requested` counter by 1 in the `volunteers` table"
+        },
+        {
+          "text": "Says to email about 3 potential reviewers",
+          "passed": true,
+          "evidence": "Select approximately 3 potential reviewers. ... Send each selected reviewer the invitation using the template below."
+        },
+        {
+          "text": "Says to reassign if a reviewer doesn't respond to the initial email",
+          "passed": true,
+          "evidence": "If a reviewer does not respond to the initial email, assign a new reviewer: pick a replacement from the `volunteers` table, increment their `Reviews requested`, email them using the same template"
+        },
+        {
+          "text": "Says to update Status and Reviewer 1/2/3 in the abstracts table",
+          "passed": true,
+          "evidence": "Set `Status` to reflect that reviewers have been assigned ... Fill in `Reviewer 1`, `Reviewer 2`, `Reviewer 3` with the linked volunteer records"
+        },
+        {
+          "text": "Says to update Reviews requested / Reviews completed in the volunteers table",
+          "passed": true,
+          "evidence": "| `volunteers` | `Reviews requested` (+1 per person) | When you send an invitation | ... | `volunteers` | `Review completed` (+1 per person) | When they finish |"
+        },
+        {
+          "text": "Mentions the #team-abstract_review Slack channel",
+          "passed": true,
+          "evidence": "stay proactive via the `#team-abstract_review` Slack channel"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 8,
+      "eval_name": "abstract-coordinate",
+      "skill": "rladies-abstract-review",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 8,
+        "total": 8,
+        "time_seconds": 26.8,
+        "tokens": 16437,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to check the deadline, the requester's preferred reviewer language/gender, comments, and that the doc is accessible",
+          "passed": false,
+          "evidence": "absent \u2014 Section 2 checks submission completeness but does not mention language/gender preferences, a comments field, or verifying document accessibility"
+        },
+        {
+          "text": "Says to pick reviewers from the volunteers table, favouring people with fewer recent reviews",
+          "passed": false,
+          "evidence": "absent \u2014 Section 3 mentions balancing 'reviewer load' generically but never references a volunteers table or favouring those with fewer recent reviews"
+        },
+        {
+          "text": "Says to increment 'Reviews requested' for chosen volunteers",
+          "passed": false,
+          "evidence": "absent \u2014 no mention of incrementing any counter or field for volunteers"
+        },
+        {
+          "text": "Says to email about 3 potential reviewers",
+          "passed": false,
+          "evidence": "absent \u2014 Section 4 says to send a request to reviewers but provides no email template and does not frame it as contacting ~3 potential reviewers simultaneously"
+        },
+        {
+          "text": "Says to reassign if a reviewer doesn't respond to the initial email",
+          "passed": false,
+          "evidence": "\"If a reviewer goes silent, escalate to your backup reviewer\" \u2014 too vague; does not specify non-response to the initial email as the trigger or describe reassignment steps"
+        },
+        {
+          "text": "Says to update Status and Reviewer 1/2/3 in the abstracts table",
+          "passed": false,
+          "evidence": "absent \u2014 Section 5 table lists Reviewer 1/2/3 and Status fields but never names an 'abstracts table'; the system is described generically"
+        },
+        {
+          "text": "Says to update Reviews requested / Reviews completed in the volunteers table",
+          "passed": false,
+          "evidence": "absent \u2014 no mention of a volunteers table or Reviews requested / Reviews completed fields"
+        },
+        {
+          "text": "Mentions the #team-abstract_review Slack channel",
+          "passed": false,
+          "evidence": "absent \u2014 no Slack channel mentioned anywhere in the response"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 9,
+      "eval_name": "abstract-invite-email",
+      "skill": "rladies-abstract-review",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 14.7,
+        "tokens": 16923,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Warm, low-pressure tone that thanks the volunteer",
+          "passed": true,
+          "evidence": "Thank you so much for offering to review abstracts"
+        },
+        {
+          "text": "Asks if they have time 'in the next week or so' (or similar near-term, soft ask)",
+          "passed": true,
+          "evidence": "wondered if you'd have time in the next week or so"
+        },
+        {
+          "text": "States the conference deadline (March 15)",
+          "passed": true,
+          "evidence": "The conference deadline is March 15"
+        },
+        {
+          "text": "Includes the document link",
+          "passed": true,
+          "evidence": "https://docs.example.com/abstract123"
+        },
+        {
+          "text": "Makes it easy to decline and offers to reassign",
+          "passed": true,
+          "evidence": "totally understand - just let us know so we can assign a new reviewer"
+        },
+        {
+          "text": "Frames it as the R-Ladies abstract review program",
+          "passed": true,
+          "evidence": "through the R-Ladies review program"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 9,
+      "eval_name": "abstract-invite-email",
+      "skill": "rladies-abstract-review",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 3,
+        "failed": 3,
+        "total": 6,
+        "time_seconds": 14.4,
+        "tokens": 15752,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Warm, low-pressure tone that thanks the volunteer",
+          "passed": true,
+          "evidence": "Thank you so much for considering this, and for everything you do for the community!"
+        },
+        {
+          "text": "Asks if they have time 'in the next week or so' (or similar near-term, soft ask)",
+          "passed": false,
+          "evidence": "absent \u2014 deadline framing used ('before then \u2014 ideally a few days ahead') but no soft near-term availability ask"
+        },
+        {
+          "text": "States the conference deadline (March 15)",
+          "passed": true,
+          "evidence": "The conference submission deadline is **March 15**"
+        },
+        {
+          "text": "Includes the document link",
+          "passed": true,
+          "evidence": "https://docs.example.com/abstract123"
+        },
+        {
+          "text": "Makes it easy to decline and offers to reassign",
+          "passed": false,
+          "evidence": "easy to decline present ('no worries at all') but no offer to reassign"
+        },
+        {
+          "text": "Frames it as the R-Ladies abstract review program",
+          "passed": false,
+          "evidence": "absent \u2014 'R-Ladies [Chapter Name]' appears only in signature, no mention of an abstract review program"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 14,
+      "eval_name": "abstract-request-intake",
+      "skill": "rladies-abstract-review",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 23.7,
+        "tokens": 18004,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Points to the abstract request form (rladies.org/form/abstract-request)",
+          "passed": true,
+          "evidence": "https://rladies.org/form/abstract-request/"
+        },
+        {
+          "text": "Says to request at least three weeks before the conference deadline",
+          "passed": true,
+          "evidence": "Submit at least three weeks before your conference deadline."
+        },
+        {
+          "text": "Notes the service is for women and gender minorities",
+          "passed": true,
+          "evidence": "The service is open to women and gender minorities"
+        },
+        {
+          "text": "Explains reviewers give constructive feedback on topic/pitch, phrasing, and subject matter",
+          "passed": true,
+          "evidence": "covering how well the abstract communicates the topic, how the pitch lands, clarity of phrasing, and subject-matter accuracy"
+        },
+        {
+          "text": "Notes roughly 3 reviewers look at each abstract",
+          "passed": true,
+          "evidence": "selects up to three volunteer reviewers from the reviewer pool"
+        },
+        {
+          "text": "Mentions it is coordinated/tracked (Airtable and/or the #team-abstract_review channel)",
+          "passed": true,
+          "evidence": "Your request populates the R-Ladies Airtable system and automatically notifies the abstract review team via Slack"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 14,
+      "eval_name": "abstract-request-intake",
+      "skill": "rladies-abstract-review",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 6,
+        "total": 6,
+        "time_seconds": 23.1,
+        "tokens": 16128,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Points to the abstract request form (rladies.org/form/abstract-request)",
+          "passed": false,
+          "evidence": "absent; only mentions rladies.org generically as a starting point"
+        },
+        {
+          "text": "Says to request at least three weeks before the conference deadline",
+          "passed": false,
+          "evidence": "says 'at least one to two weeks in advance' \u2014 not three weeks"
+        },
+        {
+          "text": "Notes the service is for women and gender minorities",
+          "passed": false,
+          "evidence": "absent; refers only to 'members' with no mention of gender scope"
+        },
+        {
+          "text": "Explains reviewers give constructive feedback on topic/pitch, phrasing, and subject matter",
+          "passed": false,
+          "evidence": "mentions 'clarity, structure' and 'how compelling the proposal is' but not the specific categories: topic/pitch, phrasing, subject matter"
+        },
+        {
+          "text": "Notes roughly 3 reviewers look at each abstract",
+          "passed": false,
+          "evidence": "says 'a volunteer reviewer (or small group of reviewers)' \u2014 no specific number"
+        },
+        {
+          "text": "Mentions it is coordinated/tracked (Airtable and/or the #team-abstract_review channel)",
+          "passed": false,
+          "evidence": "absent; no mention of Airtable or any specific tracking channel"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "blog-frontmatter",
+      "skill": "rladies-blog-post",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8889,
+        "passed": 8,
+        "failed": 1,
+        "total": 9,
+        "time_seconds": 27.8,
+        "tokens": 21423,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Places the post at content/blog/<year>/<MM-DD-slug>/index.en.md (page bundle)",
+          "passed": true,
+          "evidence": "content/blog/2026/03-iwd-oslo-recap/ \u2514\u2500\u2500 index.en.md"
+        },
+        {
+          "text": "Mentions the `hugo new --kind blog` archetype command",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Frontmatter lists authors with a directory_id field",
+          "passed": true,
+          "evidence": "directory_id: \"author-one-slug\" # omit if no directory profile"
+        },
+        {
+          "text": "Includes an editorial/editor field for the editor",
+          "passed": true,
+          "evidence": "editorial: - name: Editor Name directory_id: \"editor-slug\""
+        },
+        {
+          "text": "Shows a contributions map plus per-person contribution letters",
+          "passed": true,
+          "evidence": "contributions: a: \"Wrote the post\" ... and per-person contributions: [a, b]"
+        },
+        {
+          "text": "Uses a date in YYYY-MM-DD format",
+          "passed": true,
+          "evidence": "date: \"2026-03-08\""
+        },
+        {
+          "text": "Includes an image with both path and alt text",
+          "passed": true,
+          "evidence": "image: path: \"feature-image.png\" alt: \"Description of the feature image for screen readers\""
+        },
+        {
+          "text": "Includes categories and tags",
+          "passed": true,
+          "evidence": "categories: [community] tags: [iwd, recap, oslo, norway]"
+        },
+        {
+          "text": "Notes the feature image lives in the same folder as index.en.md",
+          "passed": true,
+          "evidence": "Place the feature image and any other assets in the same folder beside `index.en.md`"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "blog-frontmatter",
+      "skill": "rladies-blog-post",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.4444,
+        "passed": 4,
+        "failed": 5,
+        "total": 9,
+        "time_seconds": 18.6,
+        "tokens": 16068,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Places the post at content/blog/<year>/<MM-DD-slug>/index.en.md (page bundle)",
+          "passed": false,
+          "evidence": "content/blog/2026/03/iwd-oslo-2026/index.md \u2014 wrong structure (year/MM/SLUG, not year/MM-DD-slug) and uses index.md not index.en.md"
+        },
+        {
+          "text": "Mentions the `hugo new --kind blog` archetype command",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Frontmatter lists authors with a directory_id field",
+          "passed": false,
+          "evidence": "Uses link: \"https://github.com/janedoe\" instead of directory_id"
+        },
+        {
+          "text": "Includes an editorial/editor field for the editor",
+          "passed": true,
+          "evidence": "editor:\n  - name: \"Edit Person\"\n    link: \"https://github.com/editperson\""
+        },
+        {
+          "text": "Shows a contributions map plus per-person contribution letters",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Uses a date in YYYY-MM-DD format",
+          "passed": true,
+          "evidence": "date: \"2026-03-12\""
+        },
+        {
+          "text": "Includes an image with both path and alt text",
+          "passed": false,
+          "evidence": "image: \"featured.jpg\" \u2014 path only, no alt text field"
+        },
+        {
+          "text": "Includes categories and tags",
+          "passed": true,
+          "evidence": "categories:\n  - meetup\n  - recap\ntags:\n  - oslo"
+        },
+        {
+          "text": "Notes the feature image lives in the same folder as index.en.md",
+          "passed": true,
+          "evidence": "place the cover image as `featured.jpg` (or `featured.png`) in the same `iwd-oslo-2026/` directory"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "blog-publish-flow",
+      "skill": "rladies-blog-post",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 35.8,
+        "tokens": 21799,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to open a pull request (fork or push as website team)",
+          "passed": true,
+          "evidence": "Open a pull request \u2014 Website-team members: create a feature branch... Everyone else: fork the repo, then open a PR from your fork."
+        },
+        {
+          "text": "Mentions CI checks: blog-lint and/or Lighthouse",
+          "passed": true,
+          "evidence": "blog-lint.yaml and lighthouse.yaml listed in CI table"
+        },
+        {
+          "text": "Notes that body images must have alt text or CI fails",
+          "passed": true,
+          "evidence": "body-image alt text \u2014 hard fail"
+        },
+        {
+          "text": "Says to set the frontmatter date to next Tuesday",
+          "passed": true,
+          "evidence": "set this to next Tuesday's date in exact YYYY-MM-DD format (e.g. date: \"2026-06-30\")"
+        },
+        {
+          "text": "Says to add the `pending` label",
+          "passed": true,
+          "evidence": "Add the `pending` label to the PR on GitHub"
+        },
+        {
+          "text": "Explains the merge-pending workflow auto-merges on the publication date",
+          "passed": true,
+          "evidence": "merge-pending.yaml workflow runs weekdays at 10:58 UTC. On Tuesday morning it will find your PR, see that its date matches today, and squash-merge it automatically"
+        },
+        {
+          "text": "Mentions the proposal/editorial review step",
+          "passed": true,
+          "evidence": "Get reviewed by a website-team editor \u2014 A website-team reviewer is auto-assigned. The editorial team also tracks posts in Airtable"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "blog-publish-flow",
+      "skill": "rladies-blog-post",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.2857,
+        "passed": 2,
+        "failed": 5,
+        "total": 7,
+        "time_seconds": 24.8,
+        "tokens": 16201,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to open a pull request (fork or push as website team)",
+          "passed": true,
+          "evidence": "Fork or clone the R-Ladies website/blog repository... Open a Pull Request (PR) against the `main` branch."
+        },
+        {
+          "text": "Mentions CI checks: blog-lint and/or Lighthouse",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Notes that body images must have alt text or CI fails",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Says to set the frontmatter date to next Tuesday",
+          "passed": true,
+          "evidence": "Set the post's `date` field in the front matter to next Tuesday's date."
+        },
+        {
+          "text": "Says to add the `pending` label",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Explains the merge-pending workflow auto-merges on the publication date",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Mentions the proposal/editorial review step",
+          "passed": false,
+          "evidence": "absent"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 11,
+      "eval_name": "blog-shortcodes",
+      "skill": "rladies-blog-post",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 27.1,
+        "tokens": 21408,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Gives the callout shortcode syntax with type, e.g. {{< callout type=\"warning\" >}} ... {{< /callout >}}",
+          "passed": true,
+          "evidence": "{{< callout type=\"warning\" >}} The directory data is private... {{< /callout >}}"
+        },
+        {
+          "text": "Lists the callout types (tip, info, note, warning, danger)",
+          "passed": true,
+          "evidence": "Other available types: `tip`, `info`, `note`, `danger`"
+        },
+        {
+          "text": "Shows the image-as-figure markdown syntax ![alt](image \"caption\")",
+          "passed": true,
+          "evidence": "![Alt text describing what the image shows](my-image.png \"This caption appears below the figure\")"
+        },
+        {
+          "text": "Notes alt text is required / always provide alt text",
+          "passed": true,
+          "evidence": "The first argument (Alt text \u2026) is the alt text \u2014 required; the build will hard-fail without it."
+        },
+        {
+          "text": "For Quarto, says the format should be hugo-md",
+          "passed": true,
+          "evidence": "Your `.qmd` file needs `format: hugo-md` in its frontmatter"
+        },
+        {
+          "text": "Says to commit the rendered .md alongside the .qmd source",
+          "passed": true,
+          "evidence": "Commit both the `.qmd` source and the rendered `.md` next to it."
+        },
+        {
+          "text": "Mentions fig-alt and fig-cap for figures produced by code chunks",
+          "passed": true,
+          "evidence": "#| fig-alt: \"A bar chart...\" #| fig-cap: \"Chapter distribution...\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 11,
+      "eval_name": "blog-shortcodes",
+      "skill": "rladies-blog-post",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.1429,
+        "passed": 1,
+        "failed": 6,
+        "total": 7,
+        "time_seconds": 16.3,
+        "tokens": 16165,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Gives the callout shortcode syntax with type, e.g. {{< callout type=\"warning\" >}} ... {{< /callout >}}",
+          "passed": false,
+          "evidence": "Uses Quarto fenced div syntax ::: {.callout-warning} instead of the Hugo shortcode syntax."
+        },
+        {
+          "text": "Lists the callout types (tip, info, note, warning, danger)",
+          "passed": false,
+          "evidence": "Lists `.callout-note`, `.callout-tip`, `.callout-important`, `.callout-caution` \u2014 wrong set, missing 'danger', includes 'important'/'caution' not in spec."
+        },
+        {
+          "text": "Shows the image-as-figure markdown syntax ![alt](image \"caption\")",
+          "passed": false,
+          "evidence": "Shows `![Your caption text here](path/to/image.png)` \u2014 caption in alt position, no quoted title syntax for caption."
+        },
+        {
+          "text": "Notes alt text is required / always provide alt text",
+          "passed": false,
+          "evidence": "Shows `fig-alt` as an optional attribute example but never states alt text is required or must always be provided."
+        },
+        {
+          "text": "For Quarto, says the format should be hugo-md",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Says to commit the rendered .md alongside the .qmd source",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Mentions fig-alt and fig-cap for figures produced by code chunks",
+          "passed": true,
+          "evidence": "#| fig-cap: \"This is my figure caption\"\n#| fig-alt: \"A descriptive alt text for accessibility\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 10,
+      "eval_name": "brand-logo-integrity",
+      "skill": "rladies-brand",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8333,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 32.8,
+        "tokens": 21607,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says do NOT rotate, skew, stretch, or change the logo's proportions",
+          "passed": true,
+          "evidence": "Do not move, transform, or rotate the R \u2026 skewing, stretching, or otherwise changing the logo's proportions"
+        },
+        {
+          "text": "Says do NOT move the R icon relative to its text",
+          "passed": true,
+          "evidence": "Do not move, transform, or rotate the R relative to the RLadies+ text part of the logo."
+        },
+        {
+          "text": "Says do NOT recreate the logo in a different font (so Montserrat is not allowed)",
+          "passed": true,
+          "evidence": "the prohibition covers recreating the logo in a different font. You cannot substitute another font \u2014 not even a close one"
+        },
+        {
+          "text": "Says the R and + submark CAN be filled with images or brand colours",
+          "passed": true,
+          "evidence": "Fill the interior of the R and/or the + with brand colours \u2026 Fill them with images"
+        },
+        {
+          "text": "Notes any customised parts must contrast enough with their background",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Points to the Canva/Affinity guidance for how to customise the submark",
+          "passed": true,
+          "evidence": "Canva (`branding/canva-logo` \u2026) \u2026 Affinity Studio (`branding/affinity-logo`)"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 10,
+      "eval_name": "brand-logo-integrity",
+      "skill": "rladies-brand",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 3,
+        "failed": 3,
+        "total": 6,
+        "time_seconds": 24.2,
+        "tokens": 16375,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says do NOT rotate, skew, stretch, or change the logo's proportions",
+          "passed": true,
+          "evidence": "\"Rotate, skew, stretch, or distort any part of the logo\" listed under what you cannot do"
+        },
+        {
+          "text": "Says do NOT move the R icon relative to its text",
+          "passed": false,
+          "evidence": "Only says \"Separate the R icon from the wordmark in ways not provided by official assets\" \u2014 does not explicitly say do not move the R icon relative to its text"
+        },
+        {
+          "text": "Says do NOT recreate the logo in a different font (so Montserrat is not allowed)",
+          "passed": true,
+          "evidence": "\"You may not substitute a different font (including Montserrat) into the logo.\" and \"Change the typeface of the wordmark\" in cannot-do list"
+        },
+        {
+          "text": "Says the R and + submark CAN be filled with images or brand colours",
+          "passed": false,
+          "evidence": "absent \u2014 only mentions approved colour variants (purple, white, greyscale); no mention of filling the R/+ submark with images or brand colours"
+        },
+        {
+          "text": "Notes any customised parts must contrast enough with their background",
+          "passed": true,
+          "evidence": "\"Place the logo on a background that makes it illegible\" in cannot-do list; \"Good contrast between the banner background and the logo... will make the logo read clearly\""
+        },
+        {
+          "text": "Points to the Canva/Affinity guidance for how to customise the submark",
+          "passed": false,
+          "evidence": "absent \u2014 only mentions \"R-Ladies global GitHub organisation and the brand repository\" generically; no Canva/Affinity guidance for submark customisation"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "brand-visual-spec",
+      "skill": "rladies-brand",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 9,
+        "failed": 0,
+        "total": 9,
+        "time_seconds": 47.4,
+        "tokens": 22209,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Gives Blue Violet as the main colour with hex #881ef9",
+          "passed": true,
+          "evidence": "Blue Violet | `#881ef9`"
+        },
+        {
+          "text": "Names Poppins as the font",
+          "passed": true,
+          "evidence": "**Poppins** \u2014 for all text (titles, headings, body, labels)."
+        },
+        {
+          "text": "Names Inconsolata for monospace/code",
+          "passed": true,
+          "evidence": "**Inconsolata** \u2014 for any monospace / code content."
+        },
+        {
+          "text": "Gives Bastille Black #2f2f30 and Lavender White #ededf4 instead of pure black/white",
+          "passed": true,
+          "evidence": "**Bastille Black (`#2f2f30`)** and **Lavender White (`#ededf4`)** replace pure black and pure white in the brand."
+        },
+        {
+          "text": "States minimum text size of 6 points",
+          "passed": true,
+          "evidence": "Never go smaller than **6 points** for any visible text"
+        },
+        {
+          "text": "States at least 1.5 pt line spacing",
+          "passed": true,
+          "evidence": "Line spacing must be at least **1.5 pt**."
+        },
+        {
+          "text": "Says avoid italic, underline, and all-caps (use bold for emphasis)",
+          "passed": true,
+          "evidence": "Use **bold** for emphasis only \u2014 not italics, not underline, not all-caps. Avoid italic and all-caps entirely."
+        },
+        {
+          "text": "Mentions high contrast requirement",
+          "passed": true,
+          "evidence": "Text must have high contrast with its background."
+        },
+        {
+          "text": "Points to brand.yml / glamour / a machine-readable brand asset",
+          "passed": true,
+          "evidence": "**`brand.yml`** \u2014 palette (including tints), typography, and logos; **`glamour`** \u2014 Quarto extension that applies the full brand to presentations"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "brand-visual-spec",
+      "skill": "rladies-brand",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.1111,
+        "passed": 1,
+        "failed": 8,
+        "total": 9,
+        "time_seconds": 27.2,
+        "tokens": 16445,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Gives Blue Violet as the main colour with hex #881ef9",
+          "passed": false,
+          "evidence": "Primary brand colour given as `#88398A` (old purple), not #881ef9"
+        },
+        {
+          "text": "Names Poppins as the font",
+          "passed": false,
+          "evidence": "Names Raleway for headings and Lato / Open Sans for body; Poppins absent"
+        },
+        {
+          "text": "Names Inconsolata for monospace/code",
+          "passed": false,
+          "evidence": "Names Source Code Pro or Fira Code; Inconsolata absent"
+        },
+        {
+          "text": "Gives Bastille Black #2f2f30 and Lavender White #ededf4 instead of pure black/white",
+          "passed": false,
+          "evidence": "Uses `#181818` for dark text and `#FFFFFF` for white; neither Bastille Black nor Lavender White mentioned"
+        },
+        {
+          "text": "States minimum text size of 6 points",
+          "passed": false,
+          "evidence": "States 'Body text minimum 16px / 12pt on screen'; 6 points absent"
+        },
+        {
+          "text": "States at least 1.5 pt line spacing",
+          "passed": false,
+          "evidence": "States 'Line height at least 1.4x the font size'; 1.5 pt absent"
+        },
+        {
+          "text": "Says avoid italic, underline, and all-caps (use bold for emphasis)",
+          "passed": false,
+          "evidence": "Only says 'Avoid all-caps for long passages'; no mention of avoiding italic or underline, and bold-for-emphasis absent"
+        },
+        {
+          "text": "Mentions high contrast requirement",
+          "passed": true,
+          "evidence": "Maintain a minimum contrast ratio of **4.5:1** for normal text (WCAG AA)"
+        },
+        {
+          "text": "Points to brand.yml / glamour / a machine-readable brand asset",
+          "passed": false,
+          "evidence": "absent"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "brand-voice-rewrite",
+      "skill": "rladies-brand",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 21.3,
+        "tokens": 19703,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Removes 'women-only' and 'females'",
+          "passed": true,
+          "evidence": "Neither word appears in the rewrite."
+        },
+        {
+          "text": "Uses the phrasing 'gender minorities' (in R)",
+          "passed": true,
+          "evidence": "gender minorities in R and tech"
+        },
+        {
+          "text": "Writes in first-person plural (we/our)",
+          "passed": true,
+          "evidence": "Join us \u2026 we can't wait to learn together."
+        },
+        {
+          "text": "Is noticeably shorter and less corporate than the original",
+          "passed": true,
+          "evidence": "Three short sentences vs. one long corporate sentence."
+        },
+        {
+          "text": "Drops corporate phrasing like 'pleased to formally announce'/'commencement'",
+          "passed": true,
+          "evidence": "No such phrasing present; replaced with 'We're launching'"
+        },
+        {
+          "text": "Includes a call to action",
+          "passed": true,
+          "evidence": "Stay tuned for dates, topics, and sign-up links"
+        },
+        {
+          "text": "Uses the purple heart emoji as the signature",
+          "passed": true,
+          "evidence": "\ud83d\udc9c at end of rewrite"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "brand-voice-rewrite",
+      "skill": "rladies-brand",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.7143,
+        "passed": 5,
+        "failed": 2,
+        "total": 7,
+        "time_seconds": 14.0,
+        "tokens": 15594,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Removes 'women-only' and 'females'",
+          "passed": true,
+          "evidence": "women and gender minorities in data science and tech"
+        },
+        {
+          "text": "Uses the phrasing 'gender minorities' (in R)",
+          "passed": false,
+          "evidence": "gender minorities in data science and tech \u2014 missing 'in R' qualifier"
+        },
+        {
+          "text": "Writes in first-person plural (we/our)",
+          "passed": true,
+          "evidence": "We're excited to kick off our new workshop series"
+        },
+        {
+          "text": "Is noticeably shorter and less corporate than the original",
+          "passed": true,
+          "evidence": "We're excited to kick off our new workshop series for women and gender minorities in data science and tech!"
+        },
+        {
+          "text": "Drops corporate phrasing like 'pleased to formally announce'/'commencement'",
+          "passed": true,
+          "evidence": "We're excited to kick off \u2014 no formal/corporate language present"
+        },
+        {
+          "text": "Includes a call to action",
+          "passed": true,
+          "evidence": "Stay tuned for dates and registration details."
+        },
+        {
+          "text": "Uses the purple heart emoji as the signature",
+          "passed": false,
+          "evidence": "\ud83c\udf1f #RLadies #DataScience \u2014 uses star emoji, not purple heart"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "social-amplify-policy",
+      "skill": "rladies-social-posts",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6667,
+        "passed": 4,
+        "failed": 2,
+        "total": 6,
+        "time_seconds": 22.6,
+        "tokens": 18125,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says do NOT retweet in-person/local chapter events from the global account",
+          "passed": true,
+          "evidence": "\"Chapter in-person meetup \u2014 do not repost.\"; \"The global account does not amplify these because they are only relevant to a local audience\""
+        },
+        {
+          "text": "Says do NOT retweet job postings",
+          "passed": true,
+          "evidence": "\"Job posting \u2014 do not repost.\"; \"Job postings are explicitly excluded regardless of the company\""
+        },
+        {
+          "text": "Suggests passing the job to the community Slack jobs channel, ideally with a no-endorsement note",
+          "passed": true,
+          "evidence": "\"dropping it into the community Slack jobs channel with a no-endorsement note\""
+        },
+        {
+          "text": "Explains the account amplifies past events (with photos/links) and online events instead",
+          "passed": true,
+          "evidence": "\"past chapter events (especially ones with photos and links to resources) are worth amplifying; future in-person ones are not\""
+        },
+        {
+          "text": "Mentions the account is R-focused / not a Q&A account",
+          "passed": false,
+          "evidence": "absent \u2014 no mention of R-focus or Q&A scope"
+        },
+        {
+          "text": "Notes controversial or sensitive posts get leadership review",
+          "passed": false,
+          "evidence": "absent \u2014 leadership review for controversial posts not mentioned"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "social-amplify-policy",
+      "skill": "rladies-social-posts",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.1667,
+        "passed": 1,
+        "failed": 5,
+        "total": 6,
+        "time_seconds": 21.4,
+        "tokens": 16067,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says do NOT retweet in-person/local chapter events from the global account",
+          "passed": false,
+          "evidence": "Chapter meetup announcement: Yes, repost it."
+        },
+        {
+          "text": "Says do NOT retweet job postings",
+          "passed": true,
+          "evidence": "Job posting from a tech company: No, do not repost it."
+        },
+        {
+          "text": "Suggests passing the job to the community Slack jobs channel, ideally with a no-endorsement note",
+          "passed": false,
+          "evidence": "mentions Slack only in passing for companies generally, no no-endorsement note"
+        },
+        {
+          "text": "Explains the account amplifies past events (with photos/links) and online events instead",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Mentions the account is R-focused / not a Q&A account",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Notes controversial or sensitive posts get leadership review",
+          "passed": false,
+          "evidence": "absent"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "social-event-announce",
+      "skill": "rladies-social-posts",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.875,
+        "passed": 7,
+        "failed": 1,
+        "total": 8,
+        "time_seconds": 30.4,
+        "tokens": 20061,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Gives Bluesky image ratio 16:9",
+          "passed": true,
+          "evidence": "\"Image size: 16:9 ratio\" under the Bluesky section"
+        },
+        {
+          "text": "Gives LinkedIn image ratio 1:1",
+          "passed": true,
+          "evidence": "\"Image size: 1:1 ratio\" under the LinkedIn section"
+        },
+        {
+          "text": "Mentions posting 2-3 times per week",
+          "passed": false,
+          "evidence": "absent \u2014 only scheduling window and day-of-week advice given, no frequency guidance"
+        },
+        {
+          "text": "Recommends scheduling weekdays 14:00-16:00 UTC",
+          "passed": true,
+          "evidence": "\"Post both in the 14:00\u201316:00 UTC window on a weekday\""
+        },
+        {
+          "text": "Reminds to add alt text to images",
+          "passed": true,
+          "evidence": "\"Always add alt text to the image describing its content, including any text shown in it.\""
+        },
+        {
+          "text": "Writes copy in the R-Ladies voice (we/our, spotlights the chapter)",
+          "passed": true,
+          "evidence": "\"We're excited to share that @rladies-saopaulo.bsky.social is hosting...\"; \"R-Ladies Sao Paulo is hosting...\""
+        },
+        {
+          "text": "Includes hashtags #RLadies and #RStats",
+          "passed": true,
+          "evidence": "\"#RLadies #RStats #ggplot2\" appears in both Bluesky and LinkedIn drafts"
+        },
+        {
+          "text": "Mentions scheduling via Buffer",
+          "passed": true,
+          "evidence": "\"Schedule via Buffer: Create Post \u2192 select Bluesky and LinkedIn \u2192 ...\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "social-event-announce",
+      "skill": "rladies-social-posts",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.25,
+        "passed": 2,
+        "failed": 6,
+        "total": 8,
+        "time_seconds": 23.4,
+        "tokens": 16290,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Gives Bluesky image ratio 16:9",
+          "passed": false,
+          "evidence": "1200 x 628 px (1.91:1 ratio \u2014 same as Open Graph standard)"
+        },
+        {
+          "text": "Gives LinkedIn image ratio 1:1",
+          "passed": false,
+          "evidence": "1200 x 627 px (1.91:1 ratio) or 1200 x 900 px (4:3 ratio)"
+        },
+        {
+          "text": "Mentions posting 2-3 times per week",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Recommends scheduling weekdays 14:00-16:00 UTC",
+          "passed": false,
+          "evidence": "09:00\u201311:00 local time or early afternoon 13:00\u201315:00 (Bluesky); 08:00\u201310:00 or 17:00\u201318:00 local business hours (LinkedIn)"
+        },
+        {
+          "text": "Reminds to add alt text to images",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Writes copy in the R-Ladies voice (we/our, spotlights the chapter)",
+          "passed": true,
+          "evidence": "We're excited to announce an upcoming online workshop hosted by R-Ladies S\u00e3o Paulo"
+        },
+        {
+          "text": "Includes hashtags #RLadies and #RStats",
+          "passed": true,
+          "evidence": "#RLadies #RStats #ggplot2 #DataVisualization #WomenInTech"
+        },
+        {
+          "text": "Mentions scheduling via Buffer",
+          "passed": false,
+          "evidence": "absent"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 12,
+      "eval_name": "social-iwd-campaign",
+      "skill": "rladies-social-posts",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 40.4,
+        "tokens": 20744,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Mentions the dedicated @rladies_iwd account",
+          "passed": true,
+          "evidence": "\"R-Ladies runs IWD campaigns on the dedicated @rladies_iwd account (linked to iwd@rladies.org)\""
+        },
+        {
+          "text": "Says to get the global team's OK and request account access",
+          "passed": true,
+          "evidence": "\"get the global team's OK in Slack and request access to the @rladies_iwd account\""
+        },
+        {
+          "text": "Says to set a clear goal aligned with the mission, noting the mission covers all minority genders (IWD is the occasion, not the framing)",
+          "passed": true,
+          "evidence": "\"Pick one clear, mission-aligned goal\"; \"The mission covers all minority genders; IWD is a hook, not a ceiling.\""
+        },
+        {
+          "text": "Recommends a team of volunteers and a clear task list",
+          "passed": true,
+          "evidence": "\"Build a volunteer team and task list\"; \"Assign clear ownership for: Content curation / writing, Graphic production, ...\""
+        },
+        {
+          "text": "Says to automate and test the posting flow",
+          "passed": true,
+          "evidence": "\"test it before March 8. Run through the full posting flow with a draft post to confirm access, image sizing, and scheduling all work.\""
+        },
+        {
+          "text": "Says to prepare before-campaign and after-campaign communications",
+          "passed": true,
+          "evidence": "\"Before-campaign post\"; \"After-campaign post\"; both sections present in Step 4"
+        },
+        {
+          "text": "Says to get permission before using other people's content or photos",
+          "passed": true,
+          "evidence": "\"Before using anyone's content, photos, or profile information, ask them directly.\""
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 12,
+      "eval_name": "social-iwd-campaign",
+      "skill": "rladies-social-posts",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 7,
+        "total": 7,
+        "time_seconds": 38.3,
+        "tokens": 17029,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Mentions the dedicated @rladies_iwd account",
+          "passed": false,
+          "evidence": "absent \u2014 response uses `@RLadiesGlobal` throughout; no mention of `@rladies_iwd`"
+        },
+        {
+          "text": "Says to get the global team's OK and request account access",
+          "passed": false,
+          "evidence": "absent \u2014 mentions announcing in Slack but not seeking approval or requesting account access"
+        },
+        {
+          "text": "Says to set a clear goal aligned with the mission, noting the mission covers all minority genders (IWD is the occasion, not the framing)",
+          "passed": false,
+          "evidence": "absent \u2014 lists generic goals and mentions 'women and gender minorities' but never states IWD is the occasion not the framing or positions mission as primary frame"
+        },
+        {
+          "text": "Recommends a team of volunteers and a clear task list",
+          "passed": false,
+          "evidence": "absent \u2014 mentions assigning a point-of-contact and delegating to 2\u20133 organizers, but no explicit call to recruit a volunteer team with a clear task list"
+        },
+        {
+          "text": "Says to automate and test the posting flow",
+          "passed": false,
+          "evidence": "absent \u2014 recommends using a scheduling tool (Buffer, Hootsuite, Later) but says nothing about automation or testing the posting flow"
+        },
+        {
+          "text": "Says to prepare before-campaign and after-campaign communications",
+          "passed": false,
+          "evidence": "absent \u2014 has a content calendar with a teaser post and amplification week, but never frames these as 'pre-campaign' and 'post-campaign' communications as a deliberate strategy"
+        },
+        {
+          "text": "Says to get permission before using other people's content or photos",
+          "passed": false,
+          "evidence": "absent"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 7,
+      "eval_name": "translate-code-comments",
+      "skill": "rladies-translate-page",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 19.4,
+        "tokens": 17663,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to translate comments inside code blocks",
+          "passed": true,
+          "evidence": "Translate all comments inside code blocks for meaning, not word-for-word."
+        },
+        {
+          "text": "Says to keep function names and R keywords (function, if, library, etc.) in English",
+          "passed": true,
+          "evidence": "Never translate function names, arguments, or R language keywords such as `function`, `if`, `else`, `library`, `filter`, `mutate`, etc."
+        },
+        {
+          "text": "Says variable names may be translated only where it aids understanding",
+          "passed": true,
+          "evidence": "Translate variable names only where it genuinely aids the reader's understanding and does not hurt readability."
+        },
+        {
+          "text": "Notes the code must still run after translation",
+          "passed": true,
+          "evidence": "The critical constraint is that **the code must still run unchanged**"
+        },
+        {
+          "text": "Emphasizes translating meaning/intent rather than literally",
+          "passed": true,
+          "evidence": "Translate all comments inside code blocks for meaning, not word-for-word."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 7,
+      "eval_name": "translate-code-comments",
+      "skill": "rladies-translate-page",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "failed": 2,
+        "total": 5,
+        "time_seconds": 22.2,
+        "tokens": 16085,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to translate comments inside code blocks",
+          "passed": true,
+          "evidence": "Translate all comments (lines starting with #) into Portuguese. Comments are the explanatory text for the reader and should be fully localized."
+        },
+        {
+          "text": "Says to keep function names and R keywords (function, if, library, etc.) in English",
+          "passed": false,
+          "evidence": "Covers function names (mean(), filter(), etc.) but does not mention R language keywords like if, else, for, function"
+        },
+        {
+          "text": "Says variable names may be translated only where it aids understanding",
+          "passed": true,
+          "evidence": "translate only if pedagogically necessary and done consistently"
+        },
+        {
+          "text": "Notes the code must still run after translation",
+          "passed": true,
+          "evidence": "Translating them would break the code."
+        },
+        {
+          "text": "Emphasizes translating meaning/intent rather than literally",
+          "passed": false,
+          "evidence": "absent"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 13,
+      "eval_name": "translate-new-language",
+      "skill": "rladies-translate-page",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 33.4,
+        "tokens": 19479,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Register the language in config/_default/languages.yaml (with languageName and weight)",
+          "passed": true,
+          "evidence": "Add an `it` block to `config/_default/languages.yaml`... `languageName: \"Italiano\"` ... `weight: 5`"
+        },
+        {
+          "text": "Copy i18n/en.yaml to i18n/it.yaml and translate the values, keeping the keys in English",
+          "passed": true,
+          "evidence": "`cp i18n/en.yaml i18n/it.yaml` ... Keep the keys in English and the YAML indentation intact."
+        },
+        {
+          "text": "Add a 'Read in' badge label in data/read_in_lang.yaml",
+          "passed": true,
+          "evidence": "In `data/read_in_lang.yaml`, add: `it: \"Leggi in italiano\"`"
+        },
+        {
+          "text": "Add localized month names (data/months)",
+          "passed": true,
+          "evidence": "`cp data/months/en.yaml data/months/it.yaml` Translate each month name so dates render in prose as \"12 Giugno 2026\"."
+        },
+        {
+          "text": "Mentions the disableLanguages production gate (not live until its code is removed)",
+          "passed": true,
+          "evidence": "not live in production until you remove `it` from `disableLanguages` in `config/production/hugo.yaml`"
+        },
+        {
+          "text": "Open a PR tagging @rladies/translation",
+          "passed": true,
+          "evidence": "Commit and open a PR tagging `@rladies/translation`."
+        },
+        {
+          "text": "Mentions the i18n-check coverage action",
+          "passed": true,
+          "evidence": "The `i18n-check` workflow checks two things... It posts an \"i18n Coverage\" comment on the PR listing gaps."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 13,
+      "eval_name": "translate-new-language",
+      "skill": "rladies-translate-page",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 7,
+        "total": 7,
+        "time_seconds": 30.9,
+        "tokens": 16730,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Register the language in config/_default/languages.yaml (with languageName and weight)",
+          "passed": false,
+          "evidence": "References `config.toml` or `config/_default/languages.toml` (TOML, not YAML); never names `languages.yaml`"
+        },
+        {
+          "text": "Copy i18n/en.yaml to i18n/it.yaml and translate the values, keeping the keys in English",
+          "passed": false,
+          "evidence": "Mentions creating `i18n/it.yaml` with `en.yaml` as reference, but does not say to copy the file or state that keys must stay in English"
+        },
+        {
+          "text": "Add a 'Read in' badge label in data/read_in_lang.yaml",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Add localized month names (data/months)",
+          "passed": false,
+          "evidence": "Mentions date/locale formatting generically but never references `data/months`"
+        },
+        {
+          "text": "Mentions the disableLanguages production gate (not live until its code is removed)",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Open a PR tagging @rladies/translation",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Mentions the i18n-check coverage action",
+          "passed": false,
+          "evidence": "absent"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 6,
+      "eval_name": "translate-review",
+      "skill": "rladies-translate-page",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 24.2,
+        "tokens": 17973,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to find auto-translated pages via local hugo server / the orange banner",
+          "passed": true,
+          "evidence": "hugo server ... confirm the FAQ page shows the orange banner"
+        },
+        {
+          "text": "Edits the content/<section>/<slug>/index.es.md file",
+          "passed": true,
+          "evidence": "content/about-us/faq/index.es.md"
+        },
+        {
+          "text": "Translates reader-facing frontmatter (title, description, summary)",
+          "passed": true,
+          "evidence": "Translate the reader-facing frontmatter fields \u2014 `title`, `description`, and `summary`."
+        },
+        {
+          "text": "Says NOT to translate date, directory_id, or image filenames",
+          "passed": true,
+          "evidence": "Leave technical fields (`date`, `directory_id`, image filenames, etc.) untouched."
+        },
+        {
+          "text": "Says to remove the `translated: auto` flag when done",
+          "passed": true,
+          "evidence": "Remove `translated: auto` from the frontmatter (or change it to `translated: true`). This is what makes the orange banner disappear."
+        },
+        {
+          "text": "Opens a PR tagging @rladies/translation",
+          "passed": true,
+          "evidence": "Open a PR and tag **@rladies/translation** for review."
+        },
+        {
+          "text": "Mentions inclusive / gender-neutral language conventions",
+          "passed": true,
+          "evidence": "Use gender-neutral forms where they fit, consistent with the conventions already used in other Spanish pages on the site."
+        },
+        {
+          "text": "Mentions translating code comments but keeping function names/keywords in English",
+          "passed": true,
+          "evidence": "keep all function names, arguments, and R keywords in English (the code must still run); translate only the comments inside the code blocks."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 6,
+      "eval_name": "translate-review",
+      "skill": "rladies-translate-page",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 8,
+        "total": 8,
+        "time_seconds": 25.8,
+        "tokens": 16327,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to find auto-translated pages via local hugo server / the orange banner",
+          "passed": false,
+          "evidence": "Mentions the orange banner exists and hugo server for preview, but does not explain using the banner or hugo server as a mechanism to find/discover auto-translated pages."
+        },
+        {
+          "text": "Edits the content/<section>/<slug>/index.es.md file",
+          "passed": false,
+          "evidence": "Gives uncertain alternatives: 'content/faq/index.es.md, or content/es/faq/_index.md (or index.md)' \u2014 the canonical content/<section>/<slug>/index.es.md pattern is not clearly stated."
+        },
+        {
+          "text": "Translates reader-facing frontmatter (title, description, summary)",
+          "passed": false,
+          "evidence": "Mentions 'translated front-matter fields (like title or description)' but omits summary; partial mention does not satisfy the strict requirement."
+        },
+        {
+          "text": "Says NOT to translate date, directory_id, or image filenames",
+          "passed": false,
+          "evidence": "absent \u2014 only says 'Keep the YAML front matter intact' with no specific fields named."
+        },
+        {
+          "text": "Says to remove the `translated: auto` flag when done",
+          "passed": false,
+          "evidence": "Says to remove 'auto_translated: true' \u2014 wrong field name; the exact flag `translated: auto` is never mentioned."
+        },
+        {
+          "text": "Opens a PR tagging @rladies/translation",
+          "passed": false,
+          "evidence": "Says 'Request a review from a Spanish-speaking R-Ladies maintainer if you know one' \u2014 @rladies/translation team is not mentioned."
+        },
+        {
+          "text": "Mentions inclusive / gender-neutral language conventions",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Mentions translating code comments but keeping function names/keywords in English",
+          "passed": false,
+          "evidence": "absent"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.9509,
+        "stddev": 0.0966,
+        "min": 0.6667,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 29.3133,
+        "stddev": 8.8488,
+        "min": 14.7,
+        "max": 47.4
+      },
+      "tokens": {
+        "mean": 19718.8,
+        "stddev": 1747.8051,
+        "min": 16923,
+        "max": 22209
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.2477,
+        "stddev": 0.2467,
+        "min": 0.0,
+        "max": 0.7143
+      },
+      "time_seconds": {
+        "mean": 23.4267,
+        "stddev": 6.3299,
+        "min": 14.0,
+        "max": 38.3
+      },
+      "tokens": {
+        "mean": 16246.2,
+        "stddev": 351.5131,
+        "min": 15594,
+        "max": 17029
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.70",
+      "time_seconds": "+5.9",
+      "tokens": "+3473"
+    }
+  },
+  "notes": [
+    "Assertion 'Warm, low-pressure tone that thanks the volunteer' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'States the conference deadline (March 15)' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Includes the document link' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Includes an editorial/editor field for the editor' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Uses a date in YYYY-MM-DD format' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Includes categories and tags' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Notes the feature image lives in the same folder as index.en.md' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says to open a pull request (fork or push as website team)' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says to set the frontmatter date to next Tuesday' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Mentions fig-alt and fig-cap for figures produced by code chunks' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says do NOT rotate, skew, stretch, or change the logo's proportions' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says do NOT recreate the logo in a different font (so Montserrat is not allowed)' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Mentions high contrast requirement' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Removes 'women-only' and 'females'' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Writes in first-person plural (we/our)' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Is noticeably shorter and less corporate than the original' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Drops corporate phrasing like 'pleased to formally announce'/'commencement'' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Includes a call to action' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says do NOT retweet job postings' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Writes copy in the R-Ladies voice (we/our, spotlights the chapter)' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Includes hashtags #RLadies and #RStats' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says to translate comments inside code blocks' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says variable names may be translated only where it aids understanding' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Notes the code must still run after translation' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Skill lifts pass rate by +70% on average (with=95%, without=25%); biggest single-eval gap is 'abstract-coordinate' (+100%).",
+    "24 assertion(s) pass in BOTH configs - to the extent these match generic packaging vocabulary the benchmark understates the skill's rOpenSci-specific value.",
+    "Skill adds 3473 tokens vs baseline on average and runs 6s slower; baseline time/tokens vary run-to-run because without the skill the model explores/searches, while with it the model answers from grounded references."
+  ]
+}

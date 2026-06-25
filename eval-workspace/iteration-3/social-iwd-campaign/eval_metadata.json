@@ -1,0 +1,15 @@
+{
+  "eval_id": 12,
+  "eval_name": "social-iwd-campaign",
+  "skill": "rladies-social-posts",
+  "prompt": "We want to run an International Women's Day social media campaign for R-Ladies this year. How should we set it up?",
+  "assertions": [
+    "Mentions the dedicated @rladies_iwd account",
+    "Says to get the global team's OK and request account access",
+    "Says to set a clear goal aligned with the mission, noting the mission covers all minority genders (IWD is the occasion, not the framing)",
+    "Recommends a team of volunteers and a clear task list",
+    "Says to automate and test the posting flow",
+    "Says to prepare before-campaign and after-campaign communications",
+    "Says to get permission before using other people's content or photos"
+  ]
+}

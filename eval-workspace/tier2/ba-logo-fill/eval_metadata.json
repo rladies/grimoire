@@ -1,0 +1,14 @@
+{
+  "eval_id": 1,
+  "eval_name": "ba-logo-fill",
+  "skill": "rladies-branded-assets",
+  "prompt": "I want to put a photo inside the R of the R-Ladies logo for our chapter banner. Should I use Canva or Affinity, and how?",
+  "assertions": [
+    "Says the R and + of the submark can be filled with images or brand colours",
+    "Notes free Canva can't export transparent backgrounds; Affinity can (use Affinity for transparency)",
+    "Gives steps to insert the image into the R/+ shape (e.g. clipping mask in Affinity)",
+    "Says to keep every part contrasting with its background",
+    "States the logo-integrity rule: do not move/rotate/recreate the R relative to the RLadies+ text",
+    "Mentions export (PNG/JPG)"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "eval_id": 6,
+  "eval_name": "translate-review",
+  "skill": "rladies-translate-page",
+  "prompt": "There's a Spanish FAQ page on the R-Ladies website that shows an orange banner saying it was auto-translated. I speak Spanish and want to fix it properly. How do I do that and submit it?",
+  "assertions": [
+    "Says to find auto-translated pages via local hugo server / the orange banner",
+    "Edits the content/<section>/<slug>/index.es.md file",
+    "Translates reader-facing frontmatter (title, description, summary)",
+    "Says NOT to translate date, directory_id, or image filenames",
+    "Says to remove the `translated: auto` flag when done",
+    "Opens a PR tagging @rladies/translation",
+    "Mentions inclusive / gender-neutral language conventions",
+    "Mentions translating code comments but keeping function names/keywords in English"
+  ]
+}

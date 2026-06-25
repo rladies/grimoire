@@ -1,0 +1,14 @@
+{
+  "eval_id": 5,
+  "eval_name": "rc-apppassword",
+  "skill": "rladies-rocur",
+  "prompt": "How do I securely hand over Bluesky access to this week's WeAreRLadies curator?",
+  "assertions": [
+    "Says to remove the previous curator's app password",
+    "Says to generate a new app password named firstname-lastname",
+    "Says NOT to allow access to direct messages when creating it",
+    "Says to email the app password to the curator (login user weare.rladies.org)",
+    "Notes access is revoked the following Sunday / remind them to sign out",
+    "States the curation window (Monday 11:00 UTC to Saturday 16:00 UTC)"
+  ]
+}

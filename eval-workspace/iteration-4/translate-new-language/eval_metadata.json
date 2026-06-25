@@ -1,0 +1,15 @@
+{
+  "eval_id": 13,
+  "eval_name": "translate-new-language",
+  "skill": "rladies-translate-page",
+  "prompt": "Our community wants to add Italian to the R-Ladies website. What's involved in setting up a whole new language?",
+  "assertions": [
+    "Register the language in config/_default/languages.yaml (with languageName and weight)",
+    "Copy i18n/en.yaml to i18n/it.yaml and translate the values, keeping the keys in English",
+    "Add a 'Read in' badge label in data/read_in_lang.yaml",
+    "Add localized month names (data/months)",
+    "Mentions the disableLanguages production gate (not live until its code is removed)",
+    "Open a PR tagging @rladies/translation",
+    "Mentions the i18n-check coverage action"
+  ]
+}

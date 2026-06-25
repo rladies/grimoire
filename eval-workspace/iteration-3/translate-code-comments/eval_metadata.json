@@ -1,0 +1,13 @@
+{
+  "eval_id": 7,
+  "eval_name": "translate-code-comments",
+  "skill": "rladies-translate-page",
+  "prompt": "I'm translating an R tutorial page on the R-Ladies site into Portuguese. What should I do with the code chunks - the comments, function names, and variable names?",
+  "assertions": [
+    "Says to translate comments inside code blocks",
+    "Says to keep function names and R keywords (function, if, library, etc.) in English",
+    "Says variable names may be translated only where it aids understanding",
+    "Notes the code must still run after translation",
+    "Emphasizes translating meaning/intent rather than literally"
+  ]
+}

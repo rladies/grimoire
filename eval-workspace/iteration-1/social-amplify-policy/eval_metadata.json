@@ -1,0 +1,14 @@
+{
+  "eval_id": 5,
+  "eval_name": "social-amplify-policy",
+  "skill": "rladies-social-posts",
+  "prompt": "The global @rladies account got tagged in two posts today: one is a chapter's upcoming in-person meetup, the other is a job posting at a tech company. Should we repost either of them? What's our policy here?",
+  "assertions": [
+    "Says do NOT retweet in-person/local chapter events from the global account",
+    "Says do NOT retweet job postings",
+    "Suggests passing the job to the community Slack jobs channel, ideally with a no-endorsement note",
+    "Explains the account amplifies past events (with photos/links) and online events instead",
+    "Mentions the account is R-focused / not a Q&A account",
+    "Notes controversial or sensitive posts get leadership review"
+  ]
+}

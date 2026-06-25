@@ -1,0 +1,15 @@
+{
+  "eval_id": 1,
+  "eval_name": "brand-voice-rewrite",
+  "skill": "rladies-brand",
+  "prompt": "Can you rewrite this announcement in the R-Ladies voice for our social channels? Here it is: 'R-Ladies Inc. is pleased to formally announce the official commencement of our women-only data science workshop series for females in the technology sector.'",
+  "assertions": [
+    "Removes 'women-only' and 'females'",
+    "Uses the phrasing 'gender minorities' (in R)",
+    "Writes in first-person plural (we/our)",
+    "Is noticeably shorter and less corporate than the original",
+    "Drops corporate phrasing like 'pleased to formally announce'/'commencement'",
+    "Includes a call to action",
+    "Uses the purple heart emoji as the signature"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "eval_id": 8,
+  "eval_name": "abstract-coordinate",
+  "skill": "rladies-abstract-review",
+  "prompt": "A new abstract review request just came into the R-Ladies system. Walk me through how to assign reviewers and what I need to update as I go.",
+  "assertions": [
+    "Says to check the deadline, the requester's preferred reviewer language/gender, comments, and that the doc is accessible",
+    "Says to pick reviewers from the volunteers table, favouring people with fewer recent reviews",
+    "Says to increment 'Reviews requested' for chosen volunteers",
+    "Says to email about 3 potential reviewers",
+    "Says to reassign if a reviewer doesn't respond to the initial email",
+    "Says to update Status and Reviewer 1/2/3 in the abstracts table",
+    "Says to update Reviews requested / Reviews completed in the volunteers table",
+    "Mentions the #team-abstract_review Slack channel"
+  ]
+}

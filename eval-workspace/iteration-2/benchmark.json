@@ -1,0 +1,276 @@
+{
+  "metadata": {
+    "skill_name": "ropensci-skills",
+    "skill_path": "/Users/athanasm/workspace/rladies/rladies-skills",
+    "executor_model": "claude-sonnet-4-6",
+    "timestamp": "2026-06-24T18:52:03.461434+00:00",
+    "evals_run": [
+      7,
+      6
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 7,
+      "eval_name": "translate-code-comments",
+      "skill": "rladies-translate-page",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 19.4,
+        "tokens": 17663,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to translate comments inside code blocks",
+          "passed": true,
+          "evidence": "Translate all comments inside code blocks for meaning, not word-for-word."
+        },
+        {
+          "text": "Says to keep function names and R keywords (function, if, library, etc.) in English",
+          "passed": true,
+          "evidence": "Never translate function names, arguments, or R language keywords such as `function`, `if`, `else`, `library`, `filter`, `mutate`, etc."
+        },
+        {
+          "text": "Says variable names may be translated only where it aids understanding",
+          "passed": true,
+          "evidence": "Translate variable names only where it genuinely aids the reader's understanding and does not hurt readability."
+        },
+        {
+          "text": "Notes the code must still run after translation",
+          "passed": true,
+          "evidence": "The critical constraint is that **the code must still run unchanged**"
+        },
+        {
+          "text": "Emphasizes translating meaning/intent rather than literally",
+          "passed": true,
+          "evidence": "Translate all comments inside code blocks for meaning, not word-for-word."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 7,
+      "eval_name": "translate-code-comments",
+      "skill": "rladies-translate-page",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "failed": 2,
+        "total": 5,
+        "time_seconds": 22.2,
+        "tokens": 16085,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to translate comments inside code blocks",
+          "passed": true,
+          "evidence": "Translate all comments (lines starting with #) into Portuguese. Comments are the explanatory text for the reader and should be fully localized."
+        },
+        {
+          "text": "Says to keep function names and R keywords (function, if, library, etc.) in English",
+          "passed": false,
+          "evidence": "Covers function names (mean(), filter(), etc.) but does not mention R language keywords like if, else, for, function"
+        },
+        {
+          "text": "Says variable names may be translated only where it aids understanding",
+          "passed": true,
+          "evidence": "translate only if pedagogically necessary and done consistently"
+        },
+        {
+          "text": "Notes the code must still run after translation",
+          "passed": true,
+          "evidence": "Translating them would break the code."
+        },
+        {
+          "text": "Emphasizes translating meaning/intent rather than literally",
+          "passed": false,
+          "evidence": "absent"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 6,
+      "eval_name": "translate-review",
+      "skill": "rladies-translate-page",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 24.2,
+        "tokens": 17973,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to find auto-translated pages via local hugo server / the orange banner",
+          "passed": true,
+          "evidence": "hugo server ... confirm the FAQ page shows the orange banner"
+        },
+        {
+          "text": "Edits the content/<section>/<slug>/index.es.md file",
+          "passed": true,
+          "evidence": "content/about-us/faq/index.es.md"
+        },
+        {
+          "text": "Translates reader-facing frontmatter (title, description, summary)",
+          "passed": true,
+          "evidence": "Translate the reader-facing frontmatter fields \u2014 `title`, `description`, and `summary`."
+        },
+        {
+          "text": "Says NOT to translate date, directory_id, or image filenames",
+          "passed": true,
+          "evidence": "Leave technical fields (`date`, `directory_id`, image filenames, etc.) untouched."
+        },
+        {
+          "text": "Says to remove the `translated: auto` flag when done",
+          "passed": true,
+          "evidence": "Remove `translated: auto` from the frontmatter (or change it to `translated: true`). This is what makes the orange banner disappear."
+        },
+        {
+          "text": "Opens a PR tagging @rladies/translation",
+          "passed": true,
+          "evidence": "Open a PR and tag **@rladies/translation** for review."
+        },
+        {
+          "text": "Mentions inclusive / gender-neutral language conventions",
+          "passed": true,
+          "evidence": "Use gender-neutral forms where they fit, consistent with the conventions already used in other Spanish pages on the site."
+        },
+        {
+          "text": "Mentions translating code comments but keeping function names/keywords in English",
+          "passed": true,
+          "evidence": "keep all function names, arguments, and R keywords in English (the code must still run); translate only the comments inside the code blocks."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 6,
+      "eval_name": "translate-review",
+      "skill": "rladies-translate-page",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 8,
+        "total": 8,
+        "time_seconds": 25.8,
+        "tokens": 16327,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Says to find auto-translated pages via local hugo server / the orange banner",
+          "passed": false,
+          "evidence": "Mentions the orange banner exists and hugo server for preview, but does not explain using the banner or hugo server as a mechanism to find/discover auto-translated pages."
+        },
+        {
+          "text": "Edits the content/<section>/<slug>/index.es.md file",
+          "passed": false,
+          "evidence": "Gives uncertain alternatives: 'content/faq/index.es.md, or content/es/faq/_index.md (or index.md)' \u2014 the canonical content/<section>/<slug>/index.es.md pattern is not clearly stated."
+        },
+        {
+          "text": "Translates reader-facing frontmatter (title, description, summary)",
+          "passed": false,
+          "evidence": "Mentions 'translated front-matter fields (like title or description)' but omits summary; partial mention does not satisfy the strict requirement."
+        },
+        {
+          "text": "Says NOT to translate date, directory_id, or image filenames",
+          "passed": false,
+          "evidence": "absent \u2014 only says 'Keep the YAML front matter intact' with no specific fields named."
+        },
+        {
+          "text": "Says to remove the `translated: auto` flag when done",
+          "passed": false,
+          "evidence": "Says to remove 'auto_translated: true' \u2014 wrong field name; the exact flag `translated: auto` is never mentioned."
+        },
+        {
+          "text": "Opens a PR tagging @rladies/translation",
+          "passed": false,
+          "evidence": "Says 'Request a review from a Spanish-speaking R-Ladies maintainer if you know one' \u2014 @rladies/translation team is not mentioned."
+        },
+        {
+          "text": "Mentions inclusive / gender-neutral language conventions",
+          "passed": false,
+          "evidence": "absent"
+        },
+        {
+          "text": "Mentions translating code comments but keeping function names/keywords in English",
+          "passed": false,
+          "evidence": "absent"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 21.8,
+        "stddev": 3.3941,
+        "min": 19.4,
+        "max": 24.2
+      },
+      "tokens": {
+        "mean": 17818.0,
+        "stddev": 219.2031,
+        "min": 17663,
+        "max": 17973
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.3,
+        "stddev": 0.4243,
+        "min": 0.0,
+        "max": 0.6
+      },
+      "time_seconds": {
+        "mean": 24.0,
+        "stddev": 2.5456,
+        "min": 22.2,
+        "max": 25.8
+      },
+      "tokens": {
+        "mean": 16206.0,
+        "stddev": 171.1198,
+        "min": 16085,
+        "max": 16327
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.70",
+      "time_seconds": "-2.2",
+      "tokens": "+1612"
+    }
+  },
+  "notes": [
+    "Assertion 'Says to translate comments inside code blocks' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Says variable names may be translated only where it aids understanding' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Assertion 'Notes the code must still run after translation' passes in BOTH configs - does not isolate rOpenSci-specific value.",
+    "Skill lifts pass rate by +70% on average (with=100%, without=30%); biggest single-eval gap is 'translate-review' (+100%).",
+    "3 assertion(s) pass in BOTH configs - to the extent these match generic packaging vocabulary the benchmark understates the skill's rOpenSci-specific value.",
+    "Skill adds 1612 tokens vs baseline on average and runs 2s faster; baseline time/tokens vary run-to-run because without the skill the model explores/searches, while with it the model answers from grounded references."
+  ]
+}

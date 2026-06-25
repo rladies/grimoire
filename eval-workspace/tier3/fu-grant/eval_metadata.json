@@ -1,0 +1,13 @@
+{
+  "eval_id": 3,
+  "eval_name": "fu-grant",
+  "skill": "rladies-funding",
+  "prompt": "How does our R-Ladies chapter apply for an R Consortium grant?",
+  "assertions": [
+    "Says to first email grants@rladies.org (Batool Almarzouq) to express interest",
+    "Says to state the desired amount, the chapter, and the organizer responsible for the grant",
+    "Says to complete the R Consortium RUGS online application form with a detailed proposal",
+    "Says to confirm submission with Batool and report the submission date",
+    "Notes funds are transferred to a chapter account and to keep clear records of expenses"
+  ]
+}
