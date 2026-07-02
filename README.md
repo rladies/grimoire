@@ -1,13 +1,16 @@
-# RLadies+ Skills
+# Grimoire
 
-A collection of [Agent Skills](https://www.anthropic.com/news/skills) that help the
-[RLadies+](https://rladies.org/) community and global team follow the
-[RLadies+ guide](https://guide.rladies.org/) — from writing in the RLadies+ voice,
-through blogging, translation, and social media, to coordinating the work the global
-team does behind the scenes.
+A **grimoire** — a book of spells — for the [RLadies+](https://rladies.org/) community
+and global team: a collection of [Agent Skills](https://www.anthropic.com/news/skills)
+that help everyone follow the [RLadies+ guide](https://guide.rladies.org/), from writing
+in the RLadies+ voice, through blogging, translation, and social media, to coordinating
+the work the global team does behind the scenes. The name is a nod to the rest of the
+witch-themed RLadies+ tooling — [`glamour`](https://github.com/rladies/glamour),
+[`cloak`](https://github.com/rladies/cloak), and
+[`spellbind`](https://github.com/rladies/spellbind).
 
-Each skill packages the relevant parts of the guide into focused, on-demand guidance
-that an LLM agent (e.g. Claude) loads only when it's actually needed. The set is
+Each skill (a _spell_) packages the relevant parts of the guide into focused, on-demand
+guidance that an LLM agent (e.g. Claude) loads only when it's actually needed. The set is
 modelled on the [rOpenSci Skills](https://github.com/drmowinckels/ropensci-skills)
 repo.
 
@@ -67,11 +70,11 @@ familiar output whichever one they run.
 
 ## Layout
 
-The repo is packaged as a single Claude Code plugin (`rladies-skills`) that bundles
+The repo is packaged as a single Claude Code plugin (`grimoire`) that bundles
 the skills, and doubles as a one-plugin marketplace:
 
 ```
-rladies-skills/
+grimoire/
 ├── .claude-plugin/
 │   ├── marketplace.json   # the marketplace catalog
 │   └── plugin.json        # the plugin manifest
@@ -102,8 +105,8 @@ In [Claude Code](https://docs.claude.com/en/docs/claude-code), add this repo as 
 marketplace and install the plugin:
 
 ```text
-/plugin marketplace add rladies/rladies-skills
-/plugin install rladies-skills@rladies-skills
+/plugin marketplace add rladies/grimoire
+/plugin install grimoire@grimoire
 ```
 
 `/plugin marketplace update` pulls newer versions later, and `/plugin` opens the

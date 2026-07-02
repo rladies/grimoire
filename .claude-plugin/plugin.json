@@ -1,16 +1,17 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin.json",
-  "name": "rladies-skills",
-  "displayName": "R-Ladies Skills",
+  "name": "grimoire",
+  "displayName": "Grimoire",
   "version": "0.1.0",
-  "description": "A composing suite of Agent Skills distilling the R-Ladies guide (guide.rladies.org) into on-demand guidance for the community and global team: apply the R-Ladies brand and voice, write and translate blog posts, draft and schedule social media, coordinate abstract review, run chapters and events, and maintain the website the R-Ladies way.",
+  "description": "Grimoire — a composing suite of Agent Skills distilling the R-Ladies guide (guide.rladies.org) into on-demand spells for the community and global team: apply the R-Ladies brand and voice, write and translate blog posts, draft and schedule social media, coordinate abstract review, run chapters and events, maintain the website, and run pre-human-review checks the R-Ladies way.",
   "author": {
     "name": "Athanasia Monika Mowinckel",
     "email": "a.m.mowinckel@psykologi.uio.no"
   },
-  "homepage": "https://github.com/rladies/rladies-skills",
-  "repository": "https://github.com/rladies/rladies-skills",
+  "homepage": "https://github.com/rladies/grimoire",
+  "repository": "https://github.com/rladies/grimoire",
   "keywords": [
+    "grimoire",
     "rladies",
     "r",
     "community",
