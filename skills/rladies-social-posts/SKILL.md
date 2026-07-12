@@ -7,17 +7,21 @@ description: >-
   image size or Canva template per platform, deciding what the global @rladies
   account should amplify / retweet / like (or not), running an International Women's
   Day campaign, or checking whether a post needs leadership review. Builds on
-  rladies-brand for voice and inclusive language. Source: guide.rladies.org
-  social-media-management, community/twitter, and community/iwd.
+  rladies-voice for voice and the drafting pass, and rladies-brand for
+  inclusive language. Source: guide.rladies.org social-media-management,
+  community/twitter, and community/iwd.
 ---
 
 # RLadies+ Social Media
 
-Write everything in the [RLadies+ voice](../rladies-brand/SKILL.md): warm and direct,
+Write everything in the [RLadies+ voice](../rladies-voice/SKILL.md): warm and direct,
 "we"/"our", spotlight people and chapters, one exclamation mark max, 💜 as the
-signature emoji, and **"gender minorities in R"** — never "females" or "women only".
-Posts about **controversies, partnerships, or policy changes must be reviewed by the
-leadership team before publishing.**
+signature emoji, and **"gender minorities in R"** (the inclusive-language rule,
+in `rladies-brand`) — never "females" or "women only". Run drafts through
+`rladies-voice`'s tell list to strip stock openers, generic CTAs, and other
+AI-sounding patterns before scheduling. Posts about **controversies,
+partnerships, or policy changes must be reviewed by the leadership team before
+publishing.**
 
 ## Where we post
 
@@ -119,7 +123,7 @@ Past campaign themes and ideas are in
 
 ## Related skills
 
-- Voice, inclusive language, hashtags, brand → `rladies-brand`.
+- Voice and the drafting pass → `rladies-voice`. Inclusive language, hashtags, brand → `rladies-brand`.
 - Making the graphics/templates → `rladies-branded-assets`.
 - Announcing a blog post → `rladies-blog-post`.
 - Weekly rotating curation → `rladies-rocur`.

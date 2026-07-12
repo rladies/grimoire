@@ -7,7 +7,7 @@ description: >-
   the event, uploading the recording to the RLadies+ YouTube, the day-of checklist
   (code-of-conduct reminder, pronouns), or thanking speakers and sponsors. Covers
   speaker diversity, the Zoom host-key workflow, and low-bandwidth alternatives. Builds
-  on rladies-brand for voice and rladies-branded-assets for graphics. Source:
+  on rladies-voice for voice and rladies-branded-assets for graphics. Source:
   guide.rladies.org organizers/events and organizers/intro/thanks.
 ---
 
@@ -15,7 +15,7 @@ description: >-
 
 Plan ahead: **find speakers at least two months before the talk**, and sketch the
 semester/year in advance even if it changes. Write event copy in the
-[RLadies+ voice](../rladies-brand/SKILL.md); make graphics with `rladies-branded-assets`.
+[RLadies+ voice](../rladies-voice/SKILL.md); make graphics with `rladies-branded-assets`.
 
 ## Find and support a speaker
 
@@ -82,5 +82,5 @@ recipients what they're being thanked for.
 
 ## Related skills
 
-- Voice for event copy → `rladies-brand`. Graphics/flyers → `rladies-branded-assets`.
+- Voice for event copy → `rladies-voice`. Graphics/flyers → `rladies-branded-assets`.
 - Code-of-conduct concerns at partner/co-hosted events → `rladies-partnership-eval`.

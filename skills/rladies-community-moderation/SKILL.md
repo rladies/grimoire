@@ -7,8 +7,9 @@ description: >-
   allowed (commercial promotion, inappropriate content), enforcing inclusive language,
   or responding to a Code-of-Conduct concern / harassment report and escalating it. Also
   covers who the Slack is for and how the Code of Conduct is kept in sync. Builds on
-  rladies-brand for the broader inclusive-language voice. Source: guide.rladies.org
-  community/slack and global-team/code-of-conduct.
+  rladies-brand for the broader inclusive-language rule and rladies-voice for tone in
+  any reply you draft. Source: guide.rladies.org community/slack and
+  global-team/code-of-conduct.
 ---
 
 # Moderating the RLadies+ Community
@@ -34,8 +35,9 @@ distinct from the **Organizers' Slack** (chapter organizers only).
 
 Encourage **gender-neutral language**: avoid addressing people as **"ladies"** or
 **"guys"** — use **"folks", "y'all", "everyone", "everybody", "friends"** or **"pals"**.
-This is the Slack-specific phrasing; the broader RLadies+ voice and inclusive-language
-principles ("gender minorities in R") are in `rladies-brand`.
+This is the Slack-specific phrasing; the broader inclusive-language rule ("gender
+minorities in R") is in `rladies-brand`, and the wider RLadies+ tone for any reply
+you draft is in `rladies-voice`.
 
 ## What's allowed (and not)
 
@@ -62,5 +64,5 @@ in [references/coc-and-policy.md](references/coc-and-policy.md).
 
 ## Related skills
 
-- Inclusive language and the broader RLadies+ voice → `rladies-brand`.
+- Inclusive language → `rladies-brand`. The broader RLadies+ voice → `rladies-voice`.
 - The global `@rladies` account's posting/amplification rules → `rladies-social-posts`.

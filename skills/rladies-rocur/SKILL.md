@@ -6,7 +6,7 @@ description: >-
   scheduling the rotation, making the intro graphic, rotating the Bluesky app password,
   drafting the curator emails, or answering a curator's questions about posting; or when
   a curator wants the pre-curation checklist, the curating agreement, or posting/alt-text
-  tips. Builds on rladies-brand for voice and rladies-social-posts for the wider social
+  tips. Builds on rladies-voice for voice and rladies-social-posts for the wider social
   picture. Source: guide.rladies.org rocur (about, guide, admin guide, faq).
 ---
 
@@ -16,7 +16,7 @@ description: >-
 a different R-Lady each week. A curation runs **Monday 11:00 UTC → Saturday 16:00 UTC**.
 Admins (a rotating team of 1–4, monthly) recruit curators, schedule them, hand over
 account access, and support them. Write all comms in the
-[RLadies+ voice](../rladies-brand/SKILL.md).
+[RLadies+ voice](../rladies-voice/SKILL.md).
 
 ## Who can curate
 
@@ -69,6 +69,6 @@ Buffer FAQ are in [references/curator-guide.md](references/curator-guide.md).
 
 ## Related skills
 
-- Voice and inclusive language → `rladies-brand`.
+- Voice → `rladies-voice`. Inclusive language → `rladies-brand`.
 - The wider social-media picture (and how @rladies amplifies the Monday curator post) →
   `rladies-social-posts`.
