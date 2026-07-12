@@ -98,6 +98,6 @@ missing `date`; matches our Blocker above") so the human sees prediction vs actu
 
 ## Related skills
 
-- The rules this runs → `rladies-blog-post`; voice → `run-brand-check` / `rladies-brand`.
+- The rules this runs → `rladies-blog-post`; voice → `run-brand-check` / `rladies-voice` / `rladies-brand`.
 - Reviewing the whole website PR (build, JSON, chapters) → `rladies-website`.
 - Reviewing a translated post → `run-translation-review`.

@@ -72,4 +72,4 @@ The exact rules text, the 10 core values, and the conference email templates are
 ## Related skills
 
 - Sponsorship pitches, grants, reimbursement mechanics → `rladies-funding` _(planned)_.
-- Brand/voice for any reply you draft → `rladies-brand`.
+- Voice for any reply you draft → `rladies-voice`. Brand/inclusive language → `rladies-brand`.

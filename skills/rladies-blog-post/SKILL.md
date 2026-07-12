@@ -9,16 +9,20 @@ description: >-
   using the site's shortcodes and render hooks (callout, button, rlogo, figures,
   mermaid), passing the blog-lint / Lighthouse / i18n CI checks, and getting it
   scheduled via the pending label and merge-pending workflow. Builds on
-  rladies-brand for voice. For translating an existing post use
-  rladies-translate-page. Source: guide.rladies.org website/blog and admin_guide.
+  rladies-voice for voice and the drafting pass, and rladies-brand for
+  naming/inclusive-language/visual identity. For translating an existing
+  post use rladies-translate-page. Source: guide.rladies.org website/blog
+  and admin_guide.
 ---
 
 # Writing an RLadies+ Blog Post
 
 The blog lives in the Hugo site `rladies/rladies.github.io`. Write in the
-[RLadies+ voice](../rladies-brand/SKILL.md) (warm, spotlight people, 💜, "gender
-minorities in R"). The mechanics below are RLadies+-specific; for generic Hugo and
-Markdown patterns lean on the `hugo-site` and `markdown` skills.
+[RLadies+ voice](../rladies-voice/SKILL.md) (warm, spotlight people, 💜) and run
+it through that skill's tell list so the draft doesn't read AI-generated; the
+inclusive-language rule ("gender minorities in R") is in `rladies-brand`. The
+mechanics below are RLadies+-specific; for generic Hugo and Markdown patterns
+lean on the `hugo-site` and `markdown` skills.
 
 ## Propose first, then draft
 
@@ -139,7 +143,7 @@ frontmatter / shortcode catalog are in
 
 ## Related skills
 
-- Voice, inclusive language, brand → `rladies-brand`.
+- Voice and the drafting pass → `rladies-voice`. Inclusive language, brand → `rladies-brand`.
 - Translating a post into ES/PT/FR → `rladies-translate-page`.
 - Announcing the post on social → `rladies-social-posts`.
 - Generic Hugo / Markdown mechanics → `hugo-site`, `markdown`.

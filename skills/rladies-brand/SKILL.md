@@ -1,22 +1,25 @@
 ---
 name: rladies-brand
 description: >-
-  Apply the RLadies+ brand to anything community- or public-facing —
-  the voice and tone, inclusive language, visual identity, and accessibility
-  rules. Use this whenever you write or review copy "in the RLadies+ voice", draft
-  a social post / blog / email / slide / announcement for RLadies+, pick brand
-  colours or fonts, use or customise the logo, set up brand.yml / glamour / cloak /
-  spellbind for a Quarto, Shiny, or pkgdown project, or check that something is
-  on-brand and accessible. This is the foundation skill the other RLadies+ content
+  Apply the RLadies+ brand identity to anything community- or public-facing —
+  naming, the non-negotiable inclusive-language rule, visual identity, and
+  accessibility rules. Use this when you pick brand colours or fonts, use or
+  customise the logo, set up brand.yml / glamour / cloak / spellbind for a
+  Quarto, Shiny, or pkgdown project, check that copy uses "gender minorities
+  in R" rather than "females"/"women only", or check that an asset is on-brand
+  and accessible. For the RLadies+ voice and tone itself — the do/don't rules
+  and the drafting pass that keeps copy from reading AI-generated — see
+  rladies-voice. This is the foundation skill the other RLadies+ content
   skills (rladies-social-posts, rladies-blog-post, rladies-translate-page,
-  rladies-branded-assets) build on. Source: guide.rladies.org branding and
-  social-media-management sections.
+  rladies-branded-assets) build on alongside rladies-voice. Source:
+  guide.rladies.org branding and social-media-management sections.
 ---
 
-# RLadies+ Brand & Voice
+# RLadies+ Brand
 
 The **foundation** skill — load it whenever you produce or review anything an RLadies+
-audience will see; the other content skills compose on it. The brand was refreshed in
+audience will see; the other content skills compose on it, alongside
+[`rladies-voice`](../rladies-voice/SKILL.md) for tone. The brand was refreshed in
 2026; treat pre-2026 assets (old purple `#88398a` / grey `#a7a9ac`, non-Poppins type)
 as legacy to replace.
 
@@ -28,27 +31,12 @@ as legacy to replace.
 
 ## Voice
 
-> We sound like a friend who's excited about what the community is doing — not a
-> corporation issuing announcements. Our voice is direct, warm, and grounded.
-> We're a movement but we don't take ourselves too seriously.
-
-**Do**
-
-- Use "we" and "our" — we're part of the community, not above it.
-- Lead with what's happening, not who we are.
-- Keep it short — punchy lines, not paragraphs.
-- Name people and chapters specifically — spotlight others, not the org.
-- End with a clear call to action (link, sign-up, "come say hi").
-- Use the purple heart 💜 as our signature emoji.
-
-**Don't**
-
-- Sound corporate, formal, or institutional.
-- Use jargon or acronyms without context.
-- Over-explain — trust the reader.
-- Centre the global org over the people and chapters.
-- Use exclamation marks excessively — one per post max.
-- Say "females" or "women only".
+RLadies+ writes like a friend excited about what the community is doing, not a
+corporation issuing announcements — direct, warm, and grounded. The full voice
+guide (the do/don't rules, "we"/"our", one exclamation mark max, 💜) and the
+sentence-level drafting pass that keeps a draft from reading AI-generated both
+live in [`rladies-voice`](../rladies-voice/SKILL.md) — load it for any writing
+or review task.
 
 ## Inclusive language (non-negotiable)
 
@@ -124,6 +112,8 @@ walkthroughs live in `rladies-branded-assets`.
 
 ## Related skills
 
-- Writing/scheduling social posts in this voice → `rladies-social-posts`.
+- The RLadies+ voice — do/don't rules, AI-sounding tells to strip, before/after
+  rewrites → `rladies-voice`.
+- Writing/scheduling social posts → `rladies-social-posts`.
 - Writing/translating blog posts → `rladies-blog-post`, `rladies-translate-page`.
 - Making logos, hex stickers, graphics, slide decks → `rladies-branded-assets`.

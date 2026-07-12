@@ -80,6 +80,6 @@ Blocker, so it forces ⛔ Blocked even when the copy is clean — that's intende
 
 ## Related skills
 
-- The rules this runs → `rladies-social-posts`; voice → `run-brand-check` / `rladies-brand`.
+- The rules this runs → `rladies-social-posts`; voice → `run-brand-check` / `rladies-voice` / `rladies-brand`.
 - Making the graphic/template → `rladies-branded-assets`.
 - Reviewing the blog post being announced → `run-blog-review`.

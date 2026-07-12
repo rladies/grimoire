@@ -3,22 +3,26 @@ name: run-brand-check
 description: >-
   Run an automated RLadies+ brand and voice review on a piece of copy or an
   asset, as a pre-human-review gate. Use this when someone says "run a brand
-  check", "review this in the RLadies+ voice", "does this pass the brand rules",
-  or wants an email / slide / announcement / any copy checked for voice,
-  inclusive language, accessibility, and visual identity before a person signs
-  off. Loads the rules from rladies-brand and emits a structured Blockers /
-  Warnings / Nits report. It does NOT approve or publish — it hands a human a
-  punch list. The content run-* reviews (run-blog-review, run-social-review,
-  run-translation-review) delegate their brand/voice pass to this skill.
+  check", "review this in the RLadies+ voice", "does this pass the brand
+  rules", "does this sound like AI wrote it", or wants an email / slide /
+  announcement / any copy checked for voice, AI-sounding tells, inclusive
+  language, accessibility, and visual identity before a person signs off.
+  Loads the rules from rladies-voice and rladies-brand and emits a structured
+  Blockers / Warnings / Nits report. It does NOT approve or publish — it
+  hands a human a punch list. The content run-* reviews (run-blog-review,
+  run-social-review, run-translation-review) delegate their brand/voice pass
+  to this skill.
 ---
 
 # Run: RLadies+ Brand Check
 
-An **action** skill. Where [`rladies-brand`](../rladies-brand/SKILL.md) _teaches_
-the brand, this one _runs_ it: you point it at copy or an asset, it evaluates every
-rule, and it produces a review a human can act on. It is a **pre-human gate** — it
-never approves, publishes, or merges. Load `rladies-brand` for the authoritative
-rules; the checklist below is the executable form of them.
+An **action** skill. Where [`rladies-brand`](../rladies-brand/SKILL.md) and
+[`rladies-voice`](../rladies-voice/SKILL.md) _teach_ the brand and voice, this one
+_runs_ them: you point it at copy or an asset, it evaluates every rule, and it
+produces a review a human can act on. It is a **pre-human gate** — it never
+approves, publishes, or merges. Load `rladies-voice` for the voice/AI-tell rules
+and `rladies-brand` for naming/inclusive-language/visual-identity/accessibility;
+the checklist below is the executable form of them.
 
 ## What to review
 
@@ -56,13 +60,31 @@ grep -nE "R-Ladies|R Ladies" <file>
 
 ### Voice — WARNING / NIT
 
-From the brand voice do/don'ts:
+From `rladies-voice`'s identity-level do/don'ts:
 
 - Corporate / formal / institutional tone; over-explaining; centring the global org
   over people and chapters → **Warning.**
 - **More than one exclamation mark** in the piece → Warning.
 - No clear call to action where the surface expects one (social, announcement) → Nit.
 - Missing the 💜 signature where it fits → Nit.
+
+### AI-sounding tells — WARNING / NIT
+
+From `rladies-voice`'s tell list — scan for the pattern, not just the exact phrase:
+
+```bash
+grep -inE "in today's (fast-paced|ever-evolving)|ever-evolving landscape|not just .*, it's|isn't just .*, it's|we are (beyond )?thrilled|couldn't be more excited|in conclusion|it's worth noting that|moreover,|furthermore,|don't miss out|stay tuned" <file>
+```
+
+- Stock openers, "not just X, it's Y" constructions, corporate-enthusiasm
+  inflation, empty transitions ("moreover", "furthermore", "in conclusion"),
+  generic CTAs ("don't miss out", "stay tuned") → **Warning.**
+- Adjective triads ("innovative, dynamic, and impactful"), inspirational-poster
+  adjectives ("vibrant, diverse, empowering community") standing in for a named
+  person/chapter, hedging ("can potentially", "may in some cases"), bullet-itis
+  (every paragraph turned into bolded-lead-in bullets), summary endings that
+  recap instead of ending on the CTA → **Nit**, Warning if pervasive.
+- Wall-to-wall em dashes or semicolons doing the job short sentences should → Nit.
 
 ### Accessibility — BLOCKER / WARNING
 
@@ -127,6 +149,7 @@ Blocker to get to green — the point is to catch it before a person does.
 
 ## Related skills
 
-- The rules this runs → `rladies-brand`.
+- Voice and the AI-tell patterns → `rladies-voice`; naming, inclusive language,
+  visual identity, accessibility → `rladies-brand`.
 - Reviewing a blog post → `run-blog-review`. A social post → `run-social-review`.
   A translation → `run-translation-review`. Each delegates its brand pass here.

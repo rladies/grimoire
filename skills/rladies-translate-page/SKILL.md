@@ -105,6 +105,6 @@ production gate) plus the i18n-check details are in
 
 ## Related skills
 
-- Inclusive language and brand voice → `rladies-brand`.
+- Inclusive language → `rladies-brand`. Voice → `rladies-voice`.
 - The page you're translating is a blog post → `rladies-blog-post`.
 - Generic Hugo i18n mechanics → `hugo-site`.
