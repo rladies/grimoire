@@ -1,4 +1,4 @@
-# Grimoire
+# Grimoire <img src="figures/logo.png" align="right" alt="" width="120" />
 
 A **grimoire** — a book of spells — for the [RLadies+](https://rladies.org/) community
 and global team: a collection of [Agent Skills](https://www.anthropic.com/news/skills)
@@ -75,32 +75,6 @@ approve, merge, schedule, or publish — they hand a human a punch list.
 They all emit the same tiered report (defined in `run-brand-check`), so reviewers get
 familiar output whichever one they run.
 
-## Layout
-
-The repo is packaged as a single Claude Code plugin (`grimoire`) that bundles
-the skills, and doubles as a one-plugin marketplace:
-
-```
-grimoire/
-├── .claude-plugin/
-│   ├── marketplace.json   # the marketplace catalog
-│   └── plugin.json        # the plugin manifest
-└── skills/
-    └── <skill-name>/
-        ├── SKILL.md        # lightweight guidance, loaded when the skill triggers
-        └── references/     # deeper detail (templates, schemas, walkthroughs), on demand
-```
-
-The fourteen context skills: `rladies-voice` (voice, foundation) · `rladies-brand`
-(identity, foundation) · `rladies-blog-post` · `rladies-social-posts` ·
-`rladies-translate-page` · `rladies-abstract-review` · `rladies-branded-assets` ·
-`rladies-chapter-event` · `rladies-rocur` · `rladies-website` ·
-`rladies-partnership-eval` · `rladies-chapter-setup` · `rladies-funding` ·
-`rladies-community-moderation`.
-
-The action (`run-*`) skills: `run-brand-check` (shared core) · `run-blog-review` ·
-`run-social-review` · `run-translation-review`.
-
 Each skill follows the Agent Skills format: `SKILL.md` carries the lightweight
 guidance loaded once the skill triggers, while `references/` holds the deeper detail
 the agent reads only when a task calls for it. The `run-*` skills are pure `SKILL.md`
@@ -108,6 +82,8 @@ the agent reads only when a task calls for it. The `run-*` skills are pure `SKIL
 material.
 
 ## Installing
+
+### Claude code
 
 In [Claude Code](https://docs.claude.com/en/docs/claude-code), add this repo as a
 marketplace and install the plugin:
@@ -119,6 +95,56 @@ marketplace and install the plugin:
 
 `/plugin marketplace update` pulls newer versions later, and `/plugin` opens the
 manager to enable, disable, or uninstall.
+
+### Opencode
+
+[Opencode](https://opencode.ai/docs/skills/) reads the same `SKILL.md` format as
+Claude Code, but has no marketplace or install command — it just looks for skill
+folders in `.opencode/skills/`, `.claude/skills/`, or `.agents/skills/` (project- or
+user-level). To add one, copy its folder into one of those directories:
+
+```sh
+git clone --depth 1 https://github.com/rladies/grimoire /tmp/grimoire-skills
+cp -r /tmp/grimoire-skills/skills/rladies-blog-post .opencode/skills/
+rm -rf /tmp/grimoire-skills
+```
+
+If you already use the Claude Code plugin above, Opencode picks up the same
+`.claude/skills/` directory automatically — nothing extra to do. R users can skip the
+manual copy entirely with `use_skill(..., target = "opencode")`; see below.
+
+### Other
+
+If you're an R user (or just prefer a script to slash commands), the `grimoire` R
+package fetches individual skills straight from this repo into any project, for use
+with any tool that reads the Agent Skills format:
+
+```r
+# install.packages("pak")
+pak::pak("rladies/grimoire")
+
+library(grimoire)
+available_skills()                 # see what's on offer
+use_skill("rladies-blog-post")     # fetch into ./skills/rladies-blog-post/
+skill_status()                     # what's installed, and what's been hand-edited
+skill_update("rladies-blog-post")  # pull the latest release
+skill_remove("rladies-blog-post")  # done with it? clean it up
+```
+
+`use_skill()` checksums what it installs, so `skill_update()` and `skill_remove()`
+never silently overwrite a skill you've hand-edited — pass `force = TRUE` to do that
+deliberately. See `?grimoire::use_skill` for the full set of options, including
+pinning a specific release and installing to a different `path`.
+
+To land a skill somewhere Claude Code or Opencode auto-discovers it — instead of the
+plain `skills/` folder — pass `target`. `skill_update()`, `skill_remove()`, and
+`skill_status()` take the same argument, so pass it consistently for a given install:
+
+```r
+use_skill("rladies-blog-post", target = "opencode")  # -> .opencode/skills/...
+use_skill("rladies-blog-post", target = "claude")    # -> .claude/skills/... (read by both)
+skill_status(target = "opencode")
+```
 
 ## Contributing
 

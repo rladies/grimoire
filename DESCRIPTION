@@ -1,0 +1,29 @@
+Package: grimoire
+Title: Fetch and Manage 'RLadies+' Agent Skills from 'GitHub'
+Version: 0.0.0.9000
+Authors@R:
+    person("Athanasia Monika", "Mowinckel", , "a.m.mowinckel@psykologi.uio.no", role = c("aut", "cre"))
+Description: A 'usethis'-style client for the 'RLadies+' grimoire of Agent
+    Skills. Fetches individual skills from the 'rladies/grimoire' 'GitHub'
+    repository into a local project, keeps them in sync with upstream
+    releases, and removes them again without clobbering hand edits.
+    Skills fetched this way work with any tool that reads the Agent Skills
+    format, not only 'Claude'.
+License: CC0
+URL: https://github.com/rladies/grimoire
+BugReports: https://github.com/rladies/grimoire/issues
+Imports:
+    cli,
+    curl,
+    digest,
+    fs,
+    gh,
+    jsonlite,
+    yaml
+Suggests:
+    testthat (>= 3.0.0),
+    withr
+Config/testthat/edition: 3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
