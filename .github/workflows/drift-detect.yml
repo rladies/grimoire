@@ -1,0 +1,67 @@
+name: drift-detect
+
+# Detect when guide.rladies.org moves ahead of the skills that condense it.
+# Deterministic detection (A) + hard equality on embedded artifacts (D).
+# Reconciliation (B) is a separate, human-reviewed workflow whose LLM runs
+# under the anti-over-acting guardrail in tools/reconcile-prompt.md.
+#
+# guide.rladies.org (rladies/rladiesguide) cuts a clean quarterly "Automatic
+# Release" tag, so every skills/*/sources.yml manifest watches `track:
+# release` — the low-noise channel that's eligible for automated LLM
+# reconciliation. The schedule below is a poll — because drift only surfaces
+# when a new release actually lands, a monthly cadence effectively means "on
+# release, with at most a few weeks' lag".
+
+on:
+  schedule:
+    - cron: "0 6 1 * *" # monthly, 1st at 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: drift-detect
+  cancel-in-progress: false
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::yaml
+            any::gh
+            any::cli
+            any::glue
+
+      - name: Check skills against guide.rladies.org
+        id: check
+        env:
+          # gh::gh() reads GITHUB_PAT; rladies/rladiesguide is public, so read + rate limit is all that's needed
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+        run: Rscript tools/drift-detect.R
+        # writes drift-report.md and sets drift=true|false in $GITHUB_OUTPUT
+
+      - name: Open or update the drift tracking issue
+        if: steps.check.outputs.drift == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          title="Skill drift: guide.rladies.org has moved"
+          existing=$(gh issue list --state open --label drift --json number \
+            --jq '.[0].number' || true)
+          if [ -n "${existing:-}" ]; then
+            gh issue edit "$existing" --body-file drift-report.md
+            gh issue comment "$existing" --body "Re-checked on $(date -u +%F): drift still present (report updated above)."
+          else
+            gh issue create --title "$title" --label drift --body-file drift-report.md
+          fi

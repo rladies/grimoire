@@ -129,3 +129,23 @@ alongside it (the AI-tell material) — its `SKILL.md` says so up front. New ski
 should follow the same pattern: a tight `SKILL.md` with a trigger-rich `description`,
 deeper material in `references/`, and the RLadies+ voice rules from `rladies-voice`
 and inclusive-language rules from `rladies-brand` throughout.
+
+### Staying in sync with the guide
+
+Each content skill carries a `sources.yml` manifest pinning the exact
+guide.rladies.org pages it condenses, modelled on the same tooling in
+[rOpenSci Skills](https://github.com/drmowinckels/ropensci-skills). Two monthly
+GitHub Actions keep the two from drifting apart silently:
+
+- **`drift-detect`** (`tools/drift-detect.R`) checks whether any pinned page changed
+  since a skill's `ref`, and files/updates a `drift`-labelled issue when one has.
+- **`coverage-audit`** (`tools/coverage-audit.R`) checks the inverse: whether a guide
+  page exists that no skill's manifest references yet (and isn't in
+  `tools/coverage.yml`'s `out_of_scope` list), and files/updates a
+  `coverage`-labelled issue.
+
+Adding or updating a skill's guide references should also mean adding or updating its
+`skills/<skill>/sources.yml`. `tools/reconcile-prompt.md` is the guardrail an LLM
+follows when drafting a sync PR off a drift finding — it defaults to **no change**
+and only edits when the upstream diff changed guidance the skill is responsible for
+conveying.
