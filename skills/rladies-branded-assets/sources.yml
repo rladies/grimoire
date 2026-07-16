@@ -1,0 +1,35 @@
+# Provenance + drift-detection manifest for the `rladies-branded-assets` skill.
+# Schema + field docs: see skills/rladies-abstract-review/sources.yml.
+
+skill: rladies-branded-assets
+
+files:
+  - path: SKILL.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/branding/
+          source: content/branding/_index.en.md
+
+  - path: references/tool-walkthroughs.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/branding/canva-logo/
+          source: content/branding/canva-logo/index.en.md
+        - url: https://guide.rladies.org/branding/affinity-logo/
+          source: content/branding/affinity-logo/index.en.md
+        - url: https://guide.rladies.org/branding/hex-logos/
+          source: content/branding/hex-logos/index.en.md
+        - url: https://guide.rladies.org/branding/canva-social-media/
+          source: content/branding/canva-social-media/index.en.md
+        - url: https://guide.rladies.org/branding/slidedeck-templates/
+          source: content/branding/slidedeck-templates/index.en.md
+        - url: https://guide.rladies.org/branding/chapter-branding/
+          source: content/branding/chapter-branding/index.en.md

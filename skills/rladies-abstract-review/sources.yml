@@ -1,0 +1,55 @@
+# Provenance + drift-detection manifest for the `rladies-abstract-review` skill.
+#
+# Each entry ties one file in this skill to the guide.rladies.org section(s) it
+# condenses, pinned to the upstream commit/release it was last synced against.
+# tools/drift-detect.R reads every skills/*/sources.yml and asks rladiesguide:
+# "did any of these source paths change since `ref`?" — deterministically, via
+# the GitHub compare API.
+#
+# kind:
+#   prose      -> detection only; drift opens an issue, an LLM may draft a sync
+#                 PR, a human reviews. The condensed wording is curated, not
+#                 mirrored (see tools/reconcile-prompt.md for the guardrail).
+#   structured -> the file embeds a near-verbatim artifact (a whole template or
+#                 checklist mirrored 1:1). Drift would also need a hard equality
+#                 check — none of grimoire's skills currently qualify; some quote
+#                 individual rules verbatim inside otherwise-curated prose, which
+#                 still counts as `prose` here.
+#
+# track: all grimoire skills condense a single repo, rladies/rladiesguide, which
+#   cuts a clean quarterly "Automatic Release" tag (2024.04 ... 2026.07). That
+#   makes `release` the right channel everywhere: low-noise, and eligible for
+#   automated LLM reconciliation (unlike ropensci-skills, which has to fall back
+#   to `main`/advisory for upstream repos with no usable releases).
+#
+# ref: the last upstream release this file is known to reflect. Bump it (and
+# edit the file if needed) whenever a sync PR lands. Baseline below = the guide's
+# latest release at manifest creation (2026.07); a human sync pass should confirm
+# the current skill text actually matches this ref before trusting it.
+#
+# source paths are repo-relative, exactly as the GitHub compare API reports them
+# (content/**/index.en.md — English is the guide's only authored language; the
+# rest are machine-translated and not a drift source).
+
+skill: rladies-abstract-review
+
+files:
+  - path: SKILL.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/community/abstract-review/
+          source: content/community/abstract-review/index.en.md
+
+  - path: references/airtable.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/global-team/airtable/abstract-review/
+          source: content/global-team/airtable/abstract-review/index.en.md

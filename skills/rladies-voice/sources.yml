@@ -1,0 +1,21 @@
+# Provenance + drift-detection manifest for the `rladies-voice` skill.
+# Schema + field docs: see skills/rladies-abstract-review/sources.yml.
+#
+# Only the identity-level voice section is guide-distilled; the AI-tell /
+# drafting-pass material is a practical companion authored alongside it, not
+# extracted from a guide page (the SKILL.md frontmatter says so explicitly).
+# So this manifest can only ever flag drift in the "Do/Don't" voice rules —
+# the rest of the file has no upstream source to track.
+
+skill: rladies-voice
+
+files:
+  - path: SKILL.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/global-team/social-media-management/
+          source: content/global-team/social-media-management/_index.en.md

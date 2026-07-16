@@ -1,0 +1,29 @@
+# Provenance + drift-detection manifest for the `rladies-community-moderation` skill.
+# Schema + field docs: see skills/rladies-abstract-review/sources.yml.
+
+skill: rladies-community-moderation
+
+files:
+  - path: SKILL.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/community/slack/
+          source: content/community/slack/index.en.md
+
+  - path: references/coc-and-policy.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/community/slack/
+          source: content/community/slack/index.en.md
+        - url: https://guide.rladies.org/about/coc/
+          source: content/about/coc/index.en.md
+        - url: https://guide.rladies.org/global-team/code-of-conduct/
+          source: content/global-team/code-of-conduct/index.en.md

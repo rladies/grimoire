@@ -1,0 +1,49 @@
+# Provenance + drift-detection manifest for the `rladies-website` skill.
+# Schema + field docs: see skills/rladies-abstract-review/sources.yml.
+
+skill: rladies-website
+
+files:
+  - path: SKILL.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/website/admin_guide/
+          source: content/website/admin_guide/_index.en.md
+        - url: https://guide.rladies.org/website/admin_guide/review-prs/
+          source: content/website/admin_guide/review-prs/index.en.md
+        - url: https://guide.rladies.org/website/admin_guide/seo/
+          source: content/website/admin_guide/seo/index.en.md
+        - url: https://guide.rladies.org/website/chapter/
+          source: content/website/chapter/index.en.md
+        - url: https://guide.rladies.org/website/organizers/
+          source: content/website/organizers/index.en.md
+
+  - path: references/architecture-and-pipeline.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/website/admin_guide/hugo/
+          source: content/website/admin_guide/hugo/index.en.md
+        - url: https://guide.rladies.org/website/admin_guide/gha/
+          source: content/website/admin_guide/gha/index.en.md
+        - url: https://guide.rladies.org/website/admin_guide/directory-pipeline/
+          source: content/website/admin_guide/directory-pipeline/index.en.md
+
+  - path: references/chapters-and-redirects.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/website/chapter/
+          source: content/website/chapter/index.en.md
+        - url: https://guide.rladies.org/website/admin_guide/redirects/
+          source: content/website/admin_guide/redirects/index.en.md

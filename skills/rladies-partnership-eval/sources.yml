@@ -1,0 +1,37 @@
+# Provenance + drift-detection manifest for the `rladies-partnership-eval` skill.
+# Schema + field docs: see skills/rladies-abstract-review/sources.yml.
+
+skill: rladies-partnership-eval
+
+files:
+  - path: SKILL.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/organizers/intro/partnerships/
+          source: content/organizers/intro/partnerships/index.en.md
+        - url: https://guide.rladies.org/about/mission/
+          source: content/about/mission/index.en.md
+
+  - path: references/rules-values-templates.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/organizers/intro/partnerships/
+          source: content/organizers/intro/partnerships/index.en.md
+        - url: https://guide.rladies.org/organizers/rules/
+          source: content/organizers/rules/index.en.md
+        - url: https://guide.rladies.org/about/mission/
+          source: content/about/mission/index.en.md
+        - url: https://guide.rladies.org/about/globalteam/
+          source: content/about/globalteam/index.en.md
+        - url: https://guide.rladies.org/about/datacamp/
+          source: content/about/datacamp/index.en.md
+        - url: https://guide.rladies.org/community/conferences/
+          source: content/community/conferences/index.en.md

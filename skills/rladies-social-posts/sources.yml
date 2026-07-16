@@ -1,0 +1,29 @@
+# Provenance + drift-detection manifest for the `rladies-social-posts` skill.
+# Schema + field docs: see skills/rladies-abstract-review/sources.yml.
+
+skill: rladies-social-posts
+
+files:
+  - path: SKILL.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/global-team/social-media-management/
+          source: content/global-team/social-media-management/_index.en.md
+
+  - path: references/platforms-and-buffer.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/global-team/social-media-management/
+          source: content/global-team/social-media-management/_index.en.md
+        - url: https://guide.rladies.org/community/twitter/
+          source: content/community/twitter/index.en.md
+        - url: https://guide.rladies.org/community/iwd/
+          source: content/community/iwd/index.en.md

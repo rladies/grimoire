@@ -1,0 +1,49 @@
+# Provenance + drift-detection manifest for the `rladies-chapter-setup` skill.
+# Schema + field docs: see skills/rladies-abstract-review/sources.yml.
+
+skill: rladies-chapter-setup
+
+files:
+  - path: SKILL.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/organizers/intro/get-started/
+          source: content/organizers/intro/get-started/index.en.md
+        - url: https://guide.rladies.org/organizers/rules/
+          source: content/organizers/rules/index.en.md
+        - url: https://guide.rladies.org/global-team/monitoring/
+          source: content/global-team/monitoring/index.en.md
+
+  - path: references/lifecycle-and-tech.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/organizers/tech/email/
+          source: content/organizers/tech/email/index.en.md
+        - url: https://guide.rladies.org/organizers/tech/security/
+          source: content/organizers/tech/security/index.en.md
+        - url: https://guide.rladies.org/organizers/tech/accounts/
+          source: content/organizers/tech/accounts/index.en.md
+        - url: https://guide.rladies.org/organizers/intro/retiring/
+          source: content/organizers/intro/retiring/index.en.md
+
+  - path: references/onboarding-and-meetup.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/global-team/onboarding/
+          source: content/global-team/onboarding/index.en.md
+        - url: https://guide.rladies.org/organizers/intro/co-organizers/
+          source: content/organizers/intro/co-organizers/index.en.md
+        - url: https://guide.rladies.org/global-team/meetup/
+          source: content/global-team/meetup/index.en.md
