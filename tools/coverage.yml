@@ -1,0 +1,103 @@
+# Coverage ledger for the drift/coverage tooling.
+#
+# tools/drift-detect.R answers "did a page the skills ALREADY cite change?".
+# tools/coverage-audit.R answers the inverse: "has a guide page appeared that
+# no skill covers yet?" — the case direct source references can't catch, and
+# the only way a brand-new guide.rladies.org section gets noticed at all.
+#
+# Invariant it enforces: every English content page under content/ is either
+#   (a) referenced by some skills/*/sources.yml manifest  -> incorporated, or
+#   (b) listed under out_of_scope below                   -> deliberately skipped.
+# The audit reports anything that is neither — a page nobody has decided about.
+#
+# Triage when a page surfaces: EITHER wire it into a manifest (incorporate it)
+# OR add it to out_of_scope with a one-line reason (skip it). Either silences it.
+#
+# Matching rules:
+#   include  - matched against the FULL path; `*` = one path segment, `**` = any
+#              number of segments (crosses slashes). "content/**" is everything
+#              under content/.
+#   exclude  - patterns WITHOUT a slash match the BASENAME anywhere (so
+#              "*.es.md" catches both index.es.md and _index.es.md); "dir/**"
+#              excludes a whole subtree; otherwise anchored full-path match.
+#
+# The out_of_scope list below was triaged once, by hand, against the design
+# principle in README.md ("What makes something a skill here"): RLadies+ is a
+# non-profit, so the strongest skills produce/standardise/review an artifact;
+# tasks that are purely clicking through an external portal (credential
+# rotation, nonprofit filings, generic tool onboarding) stay in the guide as
+# runbooks and were never meant to become skills. Everything else that isn't
+# yet referenced by a manifest was left OFF this list deliberately, so the
+# first real run of coverage-audit.R surfaces it for a human to triage rather
+# than silently assuming it's out of scope.
+
+repos:
+  - repo: rladies/rladiesguide
+    include: ["content/**"]
+    exclude:
+      - "*.es.md" # translations — English is the guide's only authored language
+      - "*.pt.md"
+      - "*.fr.md"
+      - "content/_index.en.md" # site root landing page, not a guidance page
+    out_of_scope:
+      # pure chapter-stub landing pages: no distinct guidance, just navigation
+      - path: content/about/_index.en.md
+        reason: section landing stub, no distinct guidance
+      - path: content/community/_index.en.md
+        reason: section landing stub, no distinct guidance
+      - path: content/global-team/_index.en.md
+        reason: section landing stub, no distinct guidance
+      - path: content/organizers/_index.en.md
+        reason: section landing stub, no distinct guidance
+      - path: content/organizers/intro/_index.en.md
+        reason: section landing stub, no distinct guidance
+      - path: content/organizers/events/_index.en.md
+        reason: section landing stub, no distinct guidance
+      - path: content/organizers/online-presence/_index.en.md
+        reason: section landing stub, no distinct guidance
+      - path: content/organizers/resources/_index.en.md
+        reason: section landing stub, no distinct guidance
+      - path: content/organizers/tech/_index.en.md
+        reason: section landing stub, no distinct guidance
+      - path: content/rocur/_index.en.md
+        reason: section landing stub, no distinct guidance
+      - path: content/ally/_index.en.md
+        reason: redirect stub — content moved to rladies.org/about-us/get-involved
+      - path: content/acknowledgements/_index.en.md
+        reason: credits/acknowledgements list, not operational guidance
+
+      # credential / infra rotation runbooks — portal-only tasks per README's
+      # skill-scope principle, not agent-producible artifacts
+      - path: content/global-team/infrastructure/_index.en.md
+        reason: infra credential-rotation runbook, portal-only task
+      - path: content/global-team/infrastructure/airtable-api-key/index.en.md
+        reason: infra credential-rotation runbook, portal-only task
+      - path: content/global-team/infrastructure/build-architecture/index.en.md
+        reason: infra credential-rotation runbook, portal-only task
+      - path: content/global-team/infrastructure/github-admin-token/index.en.md
+        reason: infra credential-rotation runbook, portal-only task
+      - path: content/global-team/infrastructure/github-pat/index.en.md
+        reason: infra credential-rotation runbook, portal-only task
+      - path: content/global-team/infrastructure/meetup-api/index.en.md
+        reason: infra credential-rotation runbook, portal-only task
+      - path: content/global-team/infrastructure/ssh-deploy-keys/index.en.md
+        reason: infra credential-rotation runbook, portal-only task
+
+      # nonprofit administration runbooks — explicitly named as out-of-scope
+      # in README's skill-scope principle ("nonprofit filings")
+      - path: content/global-team/nonprofit-administration/_index.en.md
+        reason: nonprofit-filing / portal runbook, not an agent-producible artifact
+      - path: content/global-team/nonprofit-administration/anytime-mailbox/index.en.md
+        reason: nonprofit-filing / portal runbook, not an agent-producible artifact
+      - path: content/global-team/nonprofit-administration/openphone/index.en.md
+        reason: nonprofit-filing / portal runbook, not an agent-producible artifact
+      - path: content/global-team/nonprofit-administration/vcorp/index.en.md
+        reason: nonprofit-filing / portal runbook, not an agent-producible artifact
+
+      # generic Airtable platform onboarding — not skill-specific guidance
+      - path: content/global-team/airtable/introduction/index.en.md
+        reason: generic Airtable platform intro, not skill-specific guidance
+      - path: content/global-team/airtable/tutorial/index.en.md
+        reason: generic Airtable platform tutorial, not skill-specific guidance
+      - path: content/global-team/airtable/api/index.en.md
+        reason: Airtable API/credential runbook, portal-only task
