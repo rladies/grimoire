@@ -1,0 +1,45 @@
+# Provenance + drift-detection manifest for the `rladies-chapter-event` skill.
+# Schema + field docs: see skills/rladies-abstract-review/sources.yml.
+
+skill: rladies-chapter-event
+
+files:
+  - path: SKILL.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/organizers/events/general/
+          source: content/organizers/events/general/index.en.md
+        - url: https://guide.rladies.org/organizers/events/promotion/
+          source: content/organizers/events/promotion/index.en.md
+        - url: https://guide.rladies.org/organizers/intro/thanks/
+          source: content/organizers/intro/thanks/index.en.md
+
+  - path: references/speakers.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/organizers/events/speakers/
+          source: content/organizers/events/speakers/index.en.md
+        - url: https://guide.rladies.org/organizers/intro/thanks/
+          source: content/organizers/intro/thanks/index.en.md
+
+  - path: references/online-and-youtube.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/organizers/events/online/
+          source: content/organizers/events/online/index.en.md
+        - url: https://guide.rladies.org/organizers/events/online-no-zoom/
+          source: content/organizers/events/online-no-zoom/index.en.md
+        - url: https://guide.rladies.org/organizers/events/youtube/
+          source: content/organizers/events/youtube/index.en.md

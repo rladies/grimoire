@@ -1,0 +1,43 @@
+# Provenance + drift-detection manifest for the `rladies-rocur` skill.
+# Schema + field docs: see skills/rladies-abstract-review/sources.yml.
+#
+# Note: the upstream "admin guide" directory has a literal space in its path
+# (content/rocur/admin guide/index.en.md) — quoted below so YAML treats it as
+# one path segment. Confirmed against the checked-out rladiesguide tree.
+
+skill: rladies-rocur
+
+files:
+  - path: SKILL.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/rocur/about/
+          source: content/rocur/about/index.en.md
+        - url: https://guide.rladies.org/rocur/guide/
+          source: content/rocur/guide/index.en.md
+
+  - path: references/admin-workflow.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/rocur/admin-guide/
+          source: "content/rocur/admin guide/index.en.md"
+
+  - path: references/curator-guide.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/rocur/guide/
+          source: content/rocur/guide/index.en.md
+        - url: https://guide.rladies.org/rocur/faq/
+          source: content/rocur/faq/index.en.md

@@ -1,0 +1,33 @@
+# Provenance + drift-detection manifest for the `rladies-blog-post` skill.
+# Schema + field docs: see skills/rladies-abstract-review/sources.yml.
+
+skill: rladies-blog-post
+
+files:
+  - path: SKILL.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/website/blog/
+          source: content/website/blog/index.en.md
+        - url: https://guide.rladies.org/website/admin_guide/blog/
+          source: content/website/admin_guide/blog/index.en.md
+
+  - path: references/editorial-and-ci.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/website/admin_guide/blog/
+          source: content/website/admin_guide/blog/index.en.md
+        - url: https://guide.rladies.org/website/admin_guide/gha/
+          source: content/website/admin_guide/gha/index.en.md
+        - url: https://guide.rladies.org/website/admin_guide/shortcodes/
+          source: content/website/admin_guide/shortcodes/index.en.md
+        - url: https://guide.rladies.org/website/fork-clone-pr/
+          source: content/website/fork-clone-pr/index.en.md

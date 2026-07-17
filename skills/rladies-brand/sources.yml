@@ -1,0 +1,17 @@
+# Provenance + drift-detection manifest for the `rladies-brand` skill.
+# Schema + field docs: see skills/rladies-abstract-review/sources.yml.
+
+skill: rladies-brand
+
+files:
+  - path: SKILL.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/branding/
+          source: content/branding/_index.en.md
+        - url: https://guide.rladies.org/global-team/social-media-management/
+          source: content/global-team/social-media-management/_index.en.md

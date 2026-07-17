@@ -1,0 +1,27 @@
+# Provenance + drift-detection manifest for the `rladies-translate-page` skill.
+# Schema + field docs: see skills/rladies-abstract-review/sources.yml.
+
+skill: rladies-translate-page
+
+files:
+  - path: SKILL.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/website/mulit-lingual/
+          source: content/website/mulit-lingual/_index.en.md
+        - url: https://guide.rladies.org/website/mulit-lingual/review/
+          source: content/website/mulit-lingual/review/index.en.md
+
+  - path: references/new-language.md
+    kind: prose
+    upstream:
+      repo: rladies/rladiesguide
+      track: release
+      ref: "2026.07"
+      pages:
+        - url: https://guide.rladies.org/website/mulit-lingual/new/
+          source: content/website/mulit-lingual/new/index.en.md
